@@ -1,0 +1,7 @@
+{
+  "name": "fingerprint-seed-tools",
+  "private": true,
+  "dependencies": {
+    "firebase": "^11.10.0"
+  }
+}

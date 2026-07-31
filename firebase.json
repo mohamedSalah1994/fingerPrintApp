@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "fingerprint-app-2026",
+          "appId": "1:241296984676:android:ea44be49fc89ffd2f8ed71",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "fingerprint-app-2026",
+          "configurations": {
+            "android": "1:241296984676:android:ea44be49fc89ffd2f8ed71",
+            "ios": "1:241296984676:ios:284c3664f751dee3f8ed71",
+            "macos": "1:241296984676:ios:284c3664f751dee3f8ed71",
+            "web": "1:241296984676:web:79bbdd73466210e1f8ed71",
+            "windows": "1:241296984676:web:21d7f50b77efa4a8f8ed71"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

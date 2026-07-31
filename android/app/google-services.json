@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241296984676",
+    "project_id": "fingerprint-app-2026",
+    "storage_bucket": "fingerprint-app-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241296984676:android:ea44be49fc89ffd2f8ed71",
+        "android_client_info": {
+          "package_name": "com.fingerprintapp.fingerprint_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANdchovY-bRndxubL7CBaR645YffFSmpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
