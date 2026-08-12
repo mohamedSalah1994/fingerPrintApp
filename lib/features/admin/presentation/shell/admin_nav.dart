@@ -61,14 +61,24 @@ abstract final class AdminNav {
       path: '/admin/groups',
     ),
     AdminDestination(
-      labelBuilder: _schedules,
-      icon: Icons.calendar_month_outlined,
-      path: '/admin/schedules',
-    ),
-    AdminDestination(
       labelBuilder: _enrollments,
       icon: Icons.assignment_ind_outlined,
       path: '/admin/enrollments',
+    ),
+    AdminDestination(
+      labelBuilder: _attendance,
+      icon: Icons.fingerprint_outlined,
+      path: '/admin/attendance',
+    ),
+    AdminDestination(
+      labelBuilder: _users,
+      icon: Icons.manage_accounts_outlined,
+      path: '/admin/users',
+    ),
+    AdminDestination(
+      labelBuilder: _devices,
+      icon: Icons.dns_outlined,
+      path: '/admin/devices',
     ),
     AdminDestination(
       labelBuilder: _settings,
@@ -86,8 +96,10 @@ abstract final class AdminNav {
   static String _students(AppLocalizations l) => l.students;
   static String _parents(AppLocalizations l) => l.parents;
   static String _groups(AppLocalizations l) => l.groups;
-  static String _schedules(AppLocalizations l) => l.schedules;
   static String _enrollments(AppLocalizations l) => l.enrollments;
+  static String _attendance(AppLocalizations l) => l.attendance;
+  static String _users(AppLocalizations l) => l.users;
+  static String _devices(AppLocalizations l) => l.devices;
   static String _settings(AppLocalizations l) => l.settings;
 
   static int indexForLocation(String location) {

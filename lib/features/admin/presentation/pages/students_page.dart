@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:fingerprint_app/core/constants/firestore_paths.dart';
 import 'package:fingerprint_app/features/admin/domain/entities/academic_entities.dart';
 import 'package:fingerprint_app/features/admin/domain/entities/people_entities.dart';
@@ -7,6 +8,7 @@ import 'package:fingerprint_app/features/admin/domain/repositories/admin_reposit
 import 'package:fingerprint_app/features/admin/presentation/cubit/crud_list_cubit.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/admin_page_frame.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/responsive_data_table.dart';
+import 'package:fingerprint_app/features/admin/presentation/widgets/searchable_select.dart';
 import 'package:fingerprint_app/l10n/app_localizations.dart';
 
 class StudentsPage extends StatelessWidget {
@@ -34,6 +36,14 @@ class StudentsPage extends StatelessWidget {
           ),
         ),
         BlocProvider(
+          create: (_) => CrudListCubit<Subject>(
+            watch: repo.watchSubjects,
+            save: repo.saveSubject,
+            remove: repo.deleteSubject,
+            idOf: (e) => e.id,
+          ),
+        ),
+        BlocProvider(
           create: (_) => CrudListCubit<ParentProfile>(
             watch: repo.watchParents,
             save: repo.saveParent,
@@ -54,86 +64,246 @@ class _StudentsView extends StatelessWidget {
     BuildContext context, {
     Student? existing,
     required List<Grade> grades,
+    required List<Subject> subjects,
+    required List<ParentProfile> parents,
   }) async {
     final l10n = AppLocalizations.of(context);
+    final repo = context.read<AdminRepository>();
     final nameCtrl = TextEditingController(text: existing?.name ?? '');
     final phoneCtrl = TextEditingController(text: existing?.phone ?? '');
+    final parentNameCtrl = TextEditingController();
+    final parentPhoneCtrl = TextEditingController();
     String? gradeId = existing?.gradeId;
+    var enrollmentType = existing?.enrollmentType ?? EnrollmentType.full;
+    final selectedSubjects = {...existing?.subjectIds ?? const <String>[]};
+    String? linkParentId;
+    var addNewParent = existing == null;
     final formKey = GlobalKey<FormState>();
+    var saving = false;
 
     await showDialog<void>(
       context: context,
       builder: (dialogContext) {
         return StatefulBuilder(
           builder: (_, setState) {
+            final gradeSubjects = subjects
+                .where(
+                  (s) =>
+                      gradeId == null ||
+                      s.gradeId == null ||
+                      s.gradeId == gradeId,
+                )
+                .toList();
+
             return AlertDialog(
               title:
                   Text(existing == null ? l10n.addStudent : l10n.editStudent),
               content: SizedBox(
-                width: 420,
+                width: 520,
                 child: Form(
                   key: formKey,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextFormField(
-                        controller: nameCtrl,
-                        decoration: InputDecoration(labelText: l10n.name),
-                        validator: (v) => (v == null || v.trim().isEmpty)
-                            ? l10n.required
-                            : null,
-                      ),
-                      const SizedBox(height: 12),
-                      TextFormField(
-                        controller: phoneCtrl,
-                        decoration: InputDecoration(labelText: l10n.phone),
-                      ),
-                      const SizedBox(height: 12),
-                      DropdownButtonFormField<String?>(
-                        value: gradeId,
-                        decoration: InputDecoration(labelText: l10n.grade),
-                        items: [
-                          DropdownMenuItem(
-                            value: null,
-                            child: Text(l10n.unspecified),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        TextFormField(
+                          controller: nameCtrl,
+                          decoration: InputDecoration(labelText: l10n.name),
+                          validator: (v) => (v == null || v.trim().isEmpty)
+                              ? l10n.required
+                              : null,
+                        ),
+                        const SizedBox(height: 12),
+                        TextFormField(
+                          controller: phoneCtrl,
+                          decoration: InputDecoration(labelText: l10n.phone),
+                        ),
+                        const SizedBox(height: 12),
+                        SearchableSelectField<Grade>(
+                          label: l10n.grade,
+                          value: grades.cast<Grade?>().firstWhere(
+                                (g) => g?.id == gradeId,
+                                orElse: () => null,
+                              ),
+                          labelOf: (g) => g.name,
+                          onSearch: (q) => searchableLocalFilter(
+                            items: grades,
+                            query: q,
+                            labelOf: (g) => g.name,
                           ),
-                          for (final g in grades)
-                            DropdownMenuItem(
-                              value: g.id,
-                              child: Text(g.name),
+                          onChanged: (g) => setState(() {
+                            gradeId = g?.id;
+                            selectedSubjects.clear();
+                          }),
+                          allowClear: true,
+                          clearLabel: l10n.unspecified,
+                        ),
+                        if (gradeId != null) ...[
+                          const SizedBox(height: 12),
+                          SegmentedButton<EnrollmentType>(
+                            segments: [
+                              ButtonSegment(
+                                value: EnrollmentType.full,
+                                label: Text(l10n.allSubjectsOption),
+                              ),
+                              ButtonSegment(
+                                value: EnrollmentType.partial,
+                                label: Text(l10n.selectedSubjectsOption),
+                              ),
+                            ],
+                            selected: {enrollmentType},
+                            onSelectionChanged: (s) => setState(
+                              () => enrollmentType = s.first,
                             ),
+                          ),
+                          if (enrollmentType == EnrollmentType.partial) ...[
+                            const SizedBox(height: 12),
+                            Wrap(
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: gradeSubjects.map((s) {
+                                final selected =
+                                    selectedSubjects.contains(s.id);
+                                return FilterChip(
+                                  label: Text(s.name),
+                                  selected: selected,
+                                  onSelected: (v) => setState(() {
+                                    if (v) {
+                                      selectedSubjects.add(s.id);
+                                    } else {
+                                      selectedSubjects.remove(s.id);
+                                    }
+                                  }),
+                                );
+                              }).toList(),
+                            ),
+                          ],
                         ],
-                        onChanged: (v) => setState(() => gradeId = v),
-                      ),
-                    ],
+                        if (existing == null) ...[
+                          const SizedBox(height: 16),
+                          SwitchListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: Text(l10n.addParentInline),
+                            value: addNewParent,
+                            onChanged: (v) =>
+                                setState(() => addNewParent = v),
+                          ),
+                          if (addNewParent) ...[
+                            TextFormField(
+                              controller: parentNameCtrl,
+                              decoration:
+                                  InputDecoration(labelText: l10n.parentName),
+                              validator: (v) {
+                                if (!addNewParent) return null;
+                                if (v == null || v.trim().isEmpty) {
+                                  return l10n.required;
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 12),
+                            TextFormField(
+                              controller: parentPhoneCtrl,
+                              decoration:
+                                  InputDecoration(labelText: l10n.parentPhone),
+                            ),
+                          ] else ...[
+                            SearchableSelectField<ParentProfile>(
+                              label: l10n.orLinkExistingParent,
+                              value: parents.cast<ParentProfile?>().firstWhere(
+                                    (p) => p?.id == linkParentId,
+                                    orElse: () => null,
+                                  ),
+                              labelOf: (p) =>
+                                  '${p.name}${p.phone == null ? '' : ' · ${p.phone}'}',
+                              onSearch: (q) => searchableLocalFilter(
+                                items: parents,
+                                query: q,
+                                labelOf: (p) => p.name,
+                              ),
+                              onChanged: (p) =>
+                                  setState(() => linkParentId = p?.id),
+                              allowClear: true,
+                              clearLabel: l10n.unspecified,
+                            ),
+                          ],
+                        ],
+                      ],
+                    ),
                   ),
                 ),
               ),
               actions: [
                 TextButton(
-                  onPressed: () => Navigator.pop(dialogContext),
+                  onPressed:
+                      saving ? null : () => Navigator.pop(dialogContext),
                   child: Text(l10n.cancel),
                 ),
                 FilledButton(
-                  onPressed: () {
-                    if (!(formKey.currentState?.validate() ?? false)) return;
-                    context.read<CrudListCubit<Student>>().save(
-                          Student(
-                            id: existing?.id ?? '',
-                            name: nameCtrl.text.trim(),
-                            branchId:
-                                existing?.branchId ?? AppDefaults.branchId,
-                            phone: phoneCtrl.text.trim().isEmpty
-                                ? null
-                                : phoneCtrl.text.trim(),
-                            gradeId: gradeId,
-                            parentIds: existing?.parentIds ?? const [],
-                            userId: existing?.userId,
-                          ),
-                        );
-                    Navigator.pop(dialogContext);
-                  },
-                  child: Text(l10n.save),
+                  onPressed: saving
+                      ? null
+                      : () async {
+                          if (!(formKey.currentState?.validate() ?? false)) {
+                            return;
+                          }
+                          setState(() => saving = true);
+                          try {
+                            final student = Student(
+                              id: existing?.id ?? '',
+                              name: nameCtrl.text.trim(),
+                              branchId:
+                                  existing?.branchId ?? AppDefaults.branchId,
+                              phone: phoneCtrl.text.trim().isEmpty
+                                  ? null
+                                  : phoneCtrl.text.trim(),
+                              gradeId: gradeId,
+                              parentIds: existing?.parentIds ?? const [],
+                              subjectIds:
+                                  enrollmentType == EnrollmentType.partial
+                                      ? selectedSubjects.toList()
+                                      : const [],
+                              enrollmentType: enrollmentType,
+                              userId: existing?.userId,
+                              status: existing?.status ?? 'active',
+                            );
+                            await repo.saveStudentWithDetails(
+                              student: student,
+                              newParent: (existing == null && addNewParent)
+                                  ? ParentProfile(
+                                      id: '',
+                                      name: parentNameCtrl.text.trim(),
+                                      branchId: AppDefaults.branchId,
+                                      phone:
+                                          parentPhoneCtrl.text.trim().isEmpty
+                                              ? null
+                                              : parentPhoneCtrl.text.trim(),
+                                    )
+                                  : null,
+                              linkExistingParentId:
+                                  (existing == null && !addNewParent)
+                                      ? linkParentId
+                                      : null,
+                            );
+                            if (dialogContext.mounted) {
+                              Navigator.pop(dialogContext);
+                            }
+                          } catch (e) {
+                            setState(() => saving = false);
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('$e')),
+                              );
+                            }
+                          }
+                        },
+                  child: saving
+                      ? const SizedBox(
+                          width: 18,
+                          height: 18,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : Text(l10n.save),
                 ),
               ],
             );
@@ -201,13 +371,6 @@ class _StudentsView extends StatelessWidget {
                               if (dialogContext.mounted) {
                                 Navigator.pop(dialogContext);
                               }
-                              if (context.mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(l10n.unlinkedNamed(name)),
-                                  ),
-                                );
-                              }
                             } catch (e) {
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -250,18 +413,6 @@ class _StudentsView extends StatelessWidget {
                               if (dialogContext.mounted) {
                                 Navigator.pop(dialogContext);
                               }
-                              if (context.mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      l10n.linkedNamed(
-                                        parent.name,
-                                        student.name,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
                             } catch (e) {
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -295,6 +446,8 @@ class _StudentsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final grades = [...?context.watch<CrudListCubit<Grade>>().state.items];
+    final subjects =
+        [...?context.watch<CrudListCubit<Subject>>().state.items];
     final parents =
         [...?context.watch<CrudListCubit<ParentProfile>>().state.items];
     final gradeName = {for (final g in grades) g.id: g.name};
@@ -302,7 +455,12 @@ class _StudentsView extends StatelessWidget {
 
     return AdminPageFrame(
       title: l10n.students,
-      onAdd: () => _openForm(context, grades: grades),
+      onAdd: () => _openForm(
+        context,
+        grades: grades,
+        subjects: subjects,
+        parents: parents,
+      ),
       child: BlocBuilder<CrudListCubit<Student>, CrudListState<Student>>(
         builder: (context, state) {
           if (state.isLoading && state.items == null) {
@@ -340,13 +498,19 @@ class _StudentsView extends StatelessWidget {
                   : s.parentIds.map((id) => parentName[id] ?? id).join('، ');
               return '${s.phone ?? '—'} · $parentsLabel';
             },
+            onOpen: (r) => context.go('/admin/students/${items[r].id}'),
             onLink: (r) => _manageParents(
               context,
               student: items[r],
               allParents: parents,
             ),
-            onEdit: (r) =>
-                _openForm(context, existing: items[r], grades: grades),
+            onEdit: (r) => _openForm(
+              context,
+              existing: items[r],
+              grades: grades,
+              subjects: subjects,
+              parents: parents,
+            ),
             onDelete: (r) async {
               final ok = await confirmDelete(context, items[r].name);
               if (!context.mounted || !ok) return;

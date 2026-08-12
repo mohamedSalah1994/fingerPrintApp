@@ -6,6 +6,7 @@ import 'package:fingerprint_app/features/admin/domain/repositories/admin_reposit
 import 'package:fingerprint_app/features/admin/presentation/cubit/crud_list_cubit.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/admin_page_frame.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/responsive_data_table.dart';
+import 'package:fingerprint_app/features/admin/presentation/widgets/searchable_select.dart';
 import 'package:fingerprint_app/l10n/app_localizations.dart';
 
 class GradesPage extends StatelessWidget {
@@ -73,19 +74,20 @@ class _GradesView extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      DropdownButtonFormField<String>(
-                        value: stages.any((s) => s.id == stageId)
-                            ? stageId
-                            : stages.first.id,
-                        decoration: InputDecoration(labelText: l10n.stages),
-                        items: [
-                          for (final s in stages)
-                            DropdownMenuItem(
-                              value: s.id,
-                              child: Text(s.name),
+                      SearchableSelectField<Stage>(
+                        label: l10n.stages,
+                        value: stages.cast<Stage?>().firstWhere(
+                              (s) => s?.id == stageId,
+                              orElse: () => stages.first,
                             ),
-                        ],
-                        onChanged: (v) => setState(() => stageId = v!),
+                        labelOf: (s) => s.name,
+                        onSearch: (q) => searchableLocalFilter(
+                          items: stages,
+                          query: q,
+                          labelOf: (s) => s.name,
+                        ),
+                        onChanged: (s) =>
+                            setState(() => stageId = s?.id ?? stageId),
                       ),
                       const SizedBox(height: 12),
                       TextFormField(

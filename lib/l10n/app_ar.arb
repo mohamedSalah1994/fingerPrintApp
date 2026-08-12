@@ -26,6 +26,45 @@
   "enrollments": "الاشتراكات",
   "settings": "الإعدادات",
   "quickShortcuts": "اختصارات سريعة",
+  "todayOverview": "نظرة اليوم",
+  "attendanceAnalysis": "تحليل الحضور اليوم",
+  "attendanceRate": "نسبة الحضور",
+  "checkedInToday": "حضروا اليوم",
+  "fingerprintPunchesToday": "بصمات اليوم",
+  "insightsAndAlerts": "تنبيهات وإجراءات",
+  "todaySessions": "حصص اليوم",
+  "noSessionsToday": "لا توجد حصص مجدولة اليوم",
+  "quickActions": "إجراءات سريعة",
+  "actionAddStudent": "إضافة طالب",
+  "actionOpenAttendance": "سجل الحضور",
+  "actionManageDevices": "الأجهزة والمزامنة",
+  "actionManageGroups": "إدارة المجموعات",
+  "actionEnrollments": "التسجيلات",
+  "actionSchedules": "الجدول الأسبوعي",
+  "alertNoDevices": "لا يوجد جهاز بصمة مسجّل",
+  "alertStudentsUnmapped": "{count} طالب بدون ربط بصمة",
+  "@alertStudentsUnmapped": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "alertNoAttendanceToday": "لا يوجد حضور مسجّل اليوم بعد",
+  "alertHighAbsent": "غياب مرتفع اليوم: {count}",
+  "@alertHighAbsent": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "alertDevicesReady": "{count} جهاز جاهز للمزامنة",
+  "@alertDevicesReady": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "fixLinkFingerprints": "ربط البصمات",
+  "viewDetails": "عرض التفاصيل",
+  "systemTotals": "إحصائيات النظام",
+  "devicesOnlineLabel": "أجهزة نشطة",
   "add": "إضافة",
   "edit": "تعديل",
   "delete": "حذف",
@@ -46,6 +85,8 @@
   "number": "رقم",
   "language": "اللغة",
   "theme": "المظهر",
+  "collapseSidebar": "طي الشريط الجانبي",
+  "expandSidebar": "توسيع الشريط الجانبي",
   "lightMode": "فاتح",
   "darkMode": "داكن",
   "systemMode": "حسب النظام",
@@ -149,5 +190,206 @@
   "salaryHybrid": "مختلط",
   "subjectsTitle": "المواد الدراسية",
   "gradesTitle": "الصفوف الدراسية",
-  "stagesTitle": "المراحل"
+  "stagesTitle": "المراحل",
+  "attendance": "الحضور والغياب",
+  "users": "المستخدمون",
+  "addAttendance": "إضافة حضور",
+  "editAttendance": "تعديل حضور",
+  "checkIn": "وقت الحضور",
+  "source": "المصدر",
+  "statusPresent": "حاضر",
+  "statusLate": "متأخر",
+  "statusAbsent": "غائب",
+  "statusExcused": "بعذر",
+  "sourceManual": "يدوي",
+  "sourceFingerprint": "بصمة",
+  "sourceDevice": "جهاز",
+  "addUser": "إضافة مستخدم",
+  "createAdminUser": "إنشاء مستخدم مدير",
+  "createTeacherUser": "إنشاء مستخدم مدرس",
+  "loginEmail": "بريد الدخول",
+  "loginPassword": "كلمة مرور الدخول",
+  "teacherAppLogin": "دخول تطبيق المدرس",
+  "accountLinked": "حساب التطبيق مرتبط",
+  "accountNotLinked": "لا يوجد حساب تطبيق",
+  "roleAdmin": "مدير",
+  "roleTeacher": "مدرس",
+  "passwordMin6": "كلمة المرور ٦ أحرف على الأقل",
+  "userCreated": "تم إنشاء المستخدم بنجاح",
+  "date": "التاريخ",
+  "status": "الحالة",
+  "role": "الدور",
+  "account": "الحساب",
+  "userCreateFailed": "فشل إنشاء المستخدم: {error}",
+  "invalidDate": "تاريخ غير صالح (yyyy-MM-dd)",
+  "pickDate": "اختر التاريخ",
+  "noStudentsYet": "أضف طالباً أولاً",
+  "createLoginHint": "ينشئ حساب دخول لفتح تطبيق المدرس",
+  "devices": "الأجهزة",
+  "addDevice": "إضافة جهاز",
+  "editDevice": "تعديل جهاز",
+  "serialNumber": "الرقم التسلسلي",
+  "ipAddress": "عنوان IP",
+  "port": "المنفذ",
+  "commKey": "مفتاح الاتصال",
+  "location": "الموقع",
+  "forceUdp": "فرض UDP",
+  "testConnection": "اختبار الاتصال",
+  "syncNow": "مزامنة الآن",
+  "syncAll": "مزامنة الكل",
+  "sidecarOnline": "الخدمة المساعدة متصلّة",
+  "sidecarOffline": "الخدمة المساعدة غير متصلّة",
+  "sidecarHint": "على نفس جهاز السنتر: شغّل zk_sidecar\\install_autostart.bat واترك الخدمة تعمل. من Chrome اسمح بالوصول للشبكة المحلية لهذا الموقع ثم أعد المحاولة",
+  "sidecarConnecting": "جاري الاتصال بالخدمة المساعدة…",
+  "sidecarConnectingHint": "يتم تشغيل الخدمة تلقائيًا والتحقق من الاتصال",
+  "sidecarRetry": "إعادة المحاولة",
+  "startAutoSync": "بدء المزامنة التلقائية",
+  "stopAutoSync": "إيقاف الحلقة",
+  "biometricMappings": "ربط البصمة",
+  "addMapping": "إضافة ربط",
+  "deviceUserId": "معرّف المستخدم على الجهاز",
+  "deviceUsers": "مستخدمو الجهاز",
+  "linkStudent": "ربط طالب",
+  "mappingSaved": "تم حفظ الربط",
+  "connectionOk": "الاتصال ناجح",
+  "connectionFailed": "فشل الاتصال",
+  "syncDone": "اكتملت المزامنة",
+  "syncFailed": "فشلت المزامنة",
+  "attendanceBySession": "حسب الحصة",
+  "sessionSearch": "بحث بالحصة",
+  "sessionNumber": "رقم الحصة",
+  "sessionStudents": "طلاب الحصة",
+  "markPresent": "تسجيل حضور",
+  "clearAttendance": "إلغاء الحضور",
+  "studentPhone": "هاتف الطالب",
+  "allDates": "كل التواريخ",
+  "studentsCount": "عدد الطلاب",
+  "sessionSearchHint": "فلتر بالتاريخ أو المجموعة أو الحصة — اضغط حصة لعرض الطلاب",
+  "selectSession": "اختر الحصة",
+  "selectGroup": "اختر المجموعة",
+  "noSessionsOnDate": "لا توجد حصص في هذا التاريخ",
+  "sessionNotStartedYet": "لم تبدأ بعد",
+  "notCheckedInYet": "لم يسجّل بعد",
+  "carriedFromPreviousSession": "من الحصة السابقة",
+  "studentHistory": "سجل الطالب",
+  "allGroups": "كل المجموعات",
+  "sessionTime": "وقت الحصة",
+  "noSessionsForDay": "لا توجد حصص أو سجلات لهذا اليوم",
+  "scheduledNoRecordsYet": "حصة مجدولة — لا سجلات بعد",
+  "offScheduleAttendance": "خارج أيام الجدول",
+  "noHistoryForStudent": "لا يوجد سجل حضور لهذا الطالب",
+  "selectStudent": "اختر طالبًا",
+  "presentCount": "حاضر: {count}",
+  "@presentCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lateCount": "متأخر: {count}",
+  "@lateCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "absentCount": "غائب: {count}",
+  "@absentCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "punchesCount": "{count} بصمة",
+  "@punchesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "ungroupedSession": "بدون مجموعة",
+  "punches": "البصمات",
+  "scheduleSlot": "الجدول",
+  "search": "بحث",
+  "searchHint": "اكتب للبحث…",
+  "searchDebounceHint": "يتم البحث بعد ثانية من التوقف عن الكتابة",
+  "noSearchResults": "لا توجد نتائج",
+  "rowsPerPage": "لكل صفحة",
+  "previousPage": "السابق",
+  "nextPage": "التالي",
+  "pageOf": "صفحة {page} من {total}",
+  "@pageOf": {
+    "placeholders": {
+      "page": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "paginationSummary": "{from}–{to} من {total}",
+  "@paginationSummary": {
+    "placeholders": {
+      "from": { "type": "int" },
+      "to": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "groupPeriod": "مدة المجموعة",
+  "periodDaily": "يومي",
+  "periodWeekly": "أسبوعي",
+  "periodMonthly": "شهري",
+  "startDate": "من تاريخ",
+  "endDate": "إلى تاريخ",
+  "sessions": "موعد الحصة الأسبوعي",
+  "addSession": "إضافة حصة",
+  "sessionTeacher": "مدرس الحصة",
+  "selectWeekdays": "أيام الأسبوع",
+  "selectWeekdaysHint": "أضف حصة: اختر المادة والأيام (يمكن أكثر من يوم) والوقت",
+  "groupStudents": "طلاب المجموعة",
+  "selectStudents": "اختر الطلاب",
+  "selectedStudentsCount": "مختار: {count}",
+  "@selectedStudentsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "selectAllVisible": "تحديد الظاهر",
+  "clearSelection": "مسح التحديد",
+  "done": "تم",
+  "noStudentsForGrade": "لا يوجد طلاب لهذا الصف",
+  "plannedSessions": "عدد الحصص",
+  "plannedSessionsCount": "{count} حصة خلال المدة",
+  "@plannedSessionsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "sessionPlanSummary": "{days} أيام/أسبوع → {count} حصة · الحضور والغياب على طلاب المجموعة",
+  "@sessionPlanSummary": {
+    "placeholders": {
+      "days": { "type": "int" },
+      "count": { "type": "int" }
+    }
+  },
+  "pickAtLeastOneWeekday": "اختر يومًا واحدًا على الأقل للحصص",
+  "invalidDateRange": "تاريخ النهاية يجب أن يكون بعد البداية",
+  "subjectScopeGrade": "على صف محدد",
+  "subjectScopeStage": "على مرحلة (كل صفوفها)",
+  "teachingGrades": "الصفوف التي يدرّسها",
+  "specializedSubjects": "المواد المتخصص فيها",
+  "allSubjectsOption": "كل مواد الصف",
+  "selectedSubjectsOption": "مواد محددة فقط",
+  "addParentInline": "إضافة ولي أمر مع الطالب",
+  "parentName": "اسم ولي الأمر",
+  "parentPhone": "هاتف ولي الأمر",
+  "orLinkExistingParent": "أو ربط ولي أمر موجود",
+  "studentDetails": "تفاصيل الطالب",
+  "teacherDetails": "تفاصيل المدرس",
+  "teacherGroups": "مجموعات المدرس",
+  "taughtSessions": "حصص يدرّسها",
+  "evaluations": "التقييمات",
+  "addEvaluation": "إضافة تقييم",
+  "score": "الدرجة",
+  "attendedSessions": "حصص حضرها",
+  "studentGroups": "مجموعات الطالب",
+  "viewDetails": "عرض التفاصيل",
+  "teacherPhoto": "صورة المدرس",
+  "teacherPhotoOptional": "صورة المدرس (اختياري)",
+  "pickPhoto": "اختيار صورة",
+  "changePhoto": "تغيير الصورة",
+  "removePhoto": "إزالة الصورة"
 }

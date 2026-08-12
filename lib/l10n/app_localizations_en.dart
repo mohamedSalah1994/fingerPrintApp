@@ -89,6 +89,84 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quickShortcuts => 'Quick shortcuts';
 
   @override
+  String get todayOverview => 'Today overview';
+
+  @override
+  String get attendanceAnalysis => 'Today\'s attendance analysis';
+
+  @override
+  String get attendanceRate => 'Attendance rate';
+
+  @override
+  String get checkedInToday => 'Checked in today';
+
+  @override
+  String get fingerprintPunchesToday => 'Fingerprint punches today';
+
+  @override
+  String get insightsAndAlerts => 'Insights & actions';
+
+  @override
+  String get todaySessions => 'Today\'s sessions';
+
+  @override
+  String get noSessionsToday => 'No sessions scheduled today';
+
+  @override
+  String get quickActions => 'Quick actions';
+
+  @override
+  String get actionAddStudent => 'Add student';
+
+  @override
+  String get actionOpenAttendance => 'Attendance log';
+
+  @override
+  String get actionManageDevices => 'Devices & sync';
+
+  @override
+  String get actionManageGroups => 'Manage groups';
+
+  @override
+  String get actionEnrollments => 'Enrollments';
+
+  @override
+  String get actionSchedules => 'Weekly schedule';
+
+  @override
+  String get alertNoDevices => 'No fingerprint device registered';
+
+  @override
+  String alertStudentsUnmapped(int count) {
+    return '$count students without fingerprint link';
+  }
+
+  @override
+  String get alertNoAttendanceToday => 'No attendance recorded today yet';
+
+  @override
+  String alertHighAbsent(int count) {
+    return 'High absences today: $count';
+  }
+
+  @override
+  String alertDevicesReady(int count) {
+    return '$count devices ready to sync';
+  }
+
+  @override
+  String get fixLinkFingerprints => 'Link fingerprints';
+
+  @override
+  String get viewDetails => 'View details';
+
+  @override
+  String get systemTotals => 'System totals';
+
+  @override
+  String get devicesOnlineLabel => 'Active devices';
+
+  @override
   String get add => 'Add';
 
   @override
@@ -149,6 +227,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get theme => 'Theme';
+
+  @override
+  String get collapseSidebar => 'Collapse sidebar';
+
+  @override
+  String get expandSidebar => 'Expand sidebar';
 
   @override
   String get lightMode => 'Light';
@@ -473,4 +557,477 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get stagesTitle => 'Stages';
+
+  @override
+  String get attendance => 'Attendance';
+
+  @override
+  String get users => 'Users';
+
+  @override
+  String get addAttendance => 'Add attendance';
+
+  @override
+  String get editAttendance => 'Edit attendance';
+
+  @override
+  String get checkIn => 'Check-in';
+
+  @override
+  String get source => 'Source';
+
+  @override
+  String get statusPresent => 'Present';
+
+  @override
+  String get statusLate => 'Late';
+
+  @override
+  String get statusAbsent => 'Absent';
+
+  @override
+  String get statusExcused => 'Excused';
+
+  @override
+  String get sourceManual => 'Manual';
+
+  @override
+  String get sourceFingerprint => 'Fingerprint';
+
+  @override
+  String get sourceDevice => 'Device';
+
+  @override
+  String get addUser => 'Add user';
+
+  @override
+  String get createAdminUser => 'Create admin user';
+
+  @override
+  String get createTeacherUser => 'Create teacher user';
+
+  @override
+  String get loginEmail => 'Login email';
+
+  @override
+  String get loginPassword => 'Login password';
+
+  @override
+  String get teacherAppLogin => 'Teacher app login';
+
+  @override
+  String get accountLinked => 'App account linked';
+
+  @override
+  String get accountNotLinked => 'No app account';
+
+  @override
+  String get roleAdmin => 'Admin';
+
+  @override
+  String get roleTeacher => 'Teacher';
+
+  @override
+  String get passwordMin6 => 'Password must be at least 6 characters';
+
+  @override
+  String get userCreated => 'User created successfully';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get role => 'Role';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String userCreateFailed(String error) {
+    return 'Failed to create user: $error';
+  }
+
+  @override
+  String get invalidDate => 'Invalid date (yyyy-MM-dd)';
+
+  @override
+  String get pickDate => 'Pick date';
+
+  @override
+  String get noStudentsYet => 'Add a student first';
+
+  @override
+  String get createLoginHint => 'Creates a login so this teacher can open the teacher app';
+
+  @override
+  String get devices => 'Devices';
+
+  @override
+  String get addDevice => 'Add device';
+
+  @override
+  String get editDevice => 'Edit device';
+
+  @override
+  String get serialNumber => 'Serial number';
+
+  @override
+  String get ipAddress => 'IP address';
+
+  @override
+  String get port => 'Port';
+
+  @override
+  String get commKey => 'Comm key';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get forceUdp => 'Force UDP';
+
+  @override
+  String get testConnection => 'Test connection';
+
+  @override
+  String get syncNow => 'Sync now';
+
+  @override
+  String get syncAll => 'Sync all';
+
+  @override
+  String get sidecarOnline => 'Sidecar online';
+
+  @override
+  String get sidecarOffline => 'Sidecar offline';
+
+  @override
+  String get sidecarHint => 'On the center PC: run zk_sidecar\\install_autostart.bat and keep it running. In Chrome, allow Local network access for this site, then retry';
+
+  @override
+  String get sidecarConnecting => 'Connecting to helper service…';
+
+  @override
+  String get sidecarConnectingHint => 'Starting the helper automatically and checking connection';
+
+  @override
+  String get sidecarRetry => 'Retry';
+
+  @override
+  String get startAutoSync => 'Start auto-sync loop';
+
+  @override
+  String get stopAutoSync => 'Stop loop';
+
+  @override
+  String get biometricMappings => 'Biometric mappings';
+
+  @override
+  String get addMapping => 'Add mapping';
+
+  @override
+  String get deviceUserId => 'Device user ID';
+
+  @override
+  String get deviceUsers => 'Device users';
+
+  @override
+  String get linkStudent => 'Link student';
+
+  @override
+  String get mappingSaved => 'Mapping saved';
+
+  @override
+  String get connectionOk => 'Connection OK';
+
+  @override
+  String get connectionFailed => 'Connection failed';
+
+  @override
+  String get syncDone => 'Sync completed';
+
+  @override
+  String get syncFailed => 'Sync failed';
+
+  @override
+  String get attendanceBySession => 'By session';
+
+  @override
+  String get sessionSearch => 'Session search';
+
+  @override
+  String get sessionNumber => 'Session #';
+
+  @override
+  String get sessionStudents => 'Session students';
+
+  @override
+  String get markPresent => 'Mark present';
+
+  @override
+  String get clearAttendance => 'Clear attendance';
+
+  @override
+  String get studentPhone => 'Student phone';
+
+  @override
+  String get allDates => 'All dates';
+
+  @override
+  String get studentsCount => 'Students';
+
+  @override
+  String get sessionSearchHint => 'Filter by date, group, or session — tap a session for the roster';
+
+  @override
+  String get selectSession => 'Select session';
+
+  @override
+  String get selectGroup => 'Select group';
+
+  @override
+  String get noSessionsOnDate => 'No sessions on this date';
+
+  @override
+  String get sessionNotStartedYet => 'Not started yet';
+
+  @override
+  String get notCheckedInYet => 'Not checked in yet';
+
+  @override
+  String get carriedFromPreviousSession => 'From previous session';
+
+  @override
+  String get studentHistory => 'Student history';
+
+  @override
+  String get allGroups => 'All groups';
+
+  @override
+  String get sessionTime => 'Session time';
+
+  @override
+  String get noSessionsForDay => 'No sessions or records for this day';
+
+  @override
+  String get scheduledNoRecordsYet => 'Scheduled — no records yet';
+
+  @override
+  String get offScheduleAttendance => 'Outside schedule days';
+
+  @override
+  String get noHistoryForStudent => 'No attendance history for this student';
+
+  @override
+  String get selectStudent => 'Select a student';
+
+  @override
+  String presentCount(int count) {
+    return 'Present: $count';
+  }
+
+  @override
+  String lateCount(int count) {
+    return 'Late: $count';
+  }
+
+  @override
+  String absentCount(int count) {
+    return 'Absent: $count';
+  }
+
+  @override
+  String punchesCount(int count) {
+    return '$count punches';
+  }
+
+  @override
+  String get ungroupedSession => 'Ungrouped';
+
+  @override
+  String get punches => 'Punches';
+
+  @override
+  String get scheduleSlot => 'Schedule';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get searchHint => 'Type to search…';
+
+  @override
+  String get searchDebounceHint => 'Search runs 1 second after you stop typing';
+
+  @override
+  String get noSearchResults => 'No results';
+
+  @override
+  String get rowsPerPage => 'Rows';
+
+  @override
+  String get previousPage => 'Previous';
+
+  @override
+  String get nextPage => 'Next';
+
+  @override
+  String pageOf(int page, int total) {
+    return 'Page $page of $total';
+  }
+
+  @override
+  String paginationSummary(int from, int to, int total) {
+    return '$from–$to of $total';
+  }
+
+  @override
+  String get groupPeriod => 'Group period';
+
+  @override
+  String get periodDaily => 'Daily';
+
+  @override
+  String get periodWeekly => 'Weekly';
+
+  @override
+  String get periodMonthly => 'Monthly';
+
+  @override
+  String get startDate => 'Start date';
+
+  @override
+  String get endDate => 'End date';
+
+  @override
+  String get sessions => 'Weekly session time';
+
+  @override
+  String get addSession => 'Add session';
+
+  @override
+  String get sessionTeacher => 'Session teacher';
+
+  @override
+  String get selectWeekdays => 'Weekdays';
+
+  @override
+  String get selectWeekdaysHint => 'Add a session: pick subject, weekdays (multiple allowed), and time';
+
+  @override
+  String get groupStudents => 'Group students';
+
+  @override
+  String get selectStudents => 'Select students';
+
+  @override
+  String selectedStudentsCount(int count) {
+    return 'Selected: $count';
+  }
+
+  @override
+  String get selectAllVisible => 'Select visible';
+
+  @override
+  String get clearSelection => 'Clear selection';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get noStudentsForGrade => 'No students for this grade';
+
+  @override
+  String get plannedSessions => 'Sessions count';
+
+  @override
+  String plannedSessionsCount(int count) {
+    return '$count sessions in period';
+  }
+
+  @override
+  String sessionPlanSummary(int days, int count) {
+    return '$days days/week → $count sessions · attendance for group students';
+  }
+
+  @override
+  String get pickAtLeastOneWeekday => 'Select at least one weekday';
+
+  @override
+  String get invalidDateRange => 'End date must be after start date';
+
+  @override
+  String get subjectScopeGrade => 'For a specific grade';
+
+  @override
+  String get subjectScopeStage => 'For a stage (all its grades)';
+
+  @override
+  String get teachingGrades => 'Grades taught';
+
+  @override
+  String get specializedSubjects => 'Specialized subjects';
+
+  @override
+  String get allSubjectsOption => 'All grade subjects';
+
+  @override
+  String get selectedSubjectsOption => 'Selected subjects only';
+
+  @override
+  String get addParentInline => 'Add parent with student';
+
+  @override
+  String get parentName => 'Parent name';
+
+  @override
+  String get parentPhone => 'Parent phone';
+
+  @override
+  String get orLinkExistingParent => 'Or link existing parent';
+
+  @override
+  String get studentDetails => 'Student details';
+
+  @override
+  String get teacherDetails => 'Teacher details';
+
+  @override
+  String get teacherGroups => 'Teacher groups';
+
+  @override
+  String get taughtSessions => 'Sessions taught';
+
+  @override
+  String get evaluations => 'Evaluations';
+
+  @override
+  String get addEvaluation => 'Add evaluation';
+
+  @override
+  String get score => 'Score';
+
+  @override
+  String get attendedSessions => 'Sessions attended';
+
+  @override
+  String get studentGroups => 'Student groups';
+
+  @override
+  String get teacherPhoto => 'Teacher photo';
+
+  @override
+  String get teacherPhotoOptional => 'Teacher photo (optional)';
+
+  @override
+  String get pickPhoto => 'Choose photo';
+
+  @override
+  String get changePhoto => 'Change photo';
+
+  @override
+  String get removePhoto => 'Remove photo';
 }

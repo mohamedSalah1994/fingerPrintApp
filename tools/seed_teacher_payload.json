@@ -1,0 +1,92 @@
+{
+  "center": {
+    "name": "سنتر مكة التعليمي",
+    "phone": "01123456789",
+    "address": "القاهرة — مدينة نصر"
+  },
+  "branch": {
+    "name": "الفرع الرئيسي"
+  },
+  "enrollmentNote": "اشتراك كامل",
+  "teacher": {
+    "email": "teacher@center.com",
+    "password": "Teacher123!",
+    "displayName": "أ. محمود حسن",
+    "phone": "01012345678",
+    "docId": "teacher_mahmoud"
+  },
+  "stages": [
+    { "id": "stage_prep", "name": "إعدادي", "order": 3 },
+    { "id": "stage_sec", "name": "ثانوي", "order": 4 }
+  ],
+  "grades": [
+    { "id": "grade_prep_1", "name": "الأول الإعدادي", "stageId": "stage_prep", "order": 1 },
+    { "id": "grade_prep_2", "name": "الثاني الإعدادي", "stageId": "stage_prep", "order": 2 },
+    { "id": "grade_prep_3", "name": "الثالث الإعدادي", "stageId": "stage_prep", "order": 3 },
+    { "id": "grade_sec_1", "name": "الأول الثانوي", "stageId": "stage_sec", "order": 1 }
+  ],
+  "subjects": [
+    { "id": "subj_math", "name": "رياضيات" },
+    { "id": "subj_physics", "name": "فيزياء" },
+    { "id": "subj_arabic", "name": "عربي" },
+    { "id": "subj_english", "name": "English" }
+  ],
+  "classrooms": [
+    { "id": "room_a1", "name": "قاعة أ1", "capacity": 28, "building": "أ", "floor": "1" },
+    { "id": "room_a2", "name": "قاعة أ2", "capacity": 32, "building": "أ", "floor": "2" },
+    { "id": "room_b1", "name": "قاعة ب1", "capacity": 24, "building": "ب", "floor": "1" }
+  ],
+  "groups": [
+    {
+      "id": "group_math_prep1_a",
+      "name": "رياضيات — أول إعدادي (أ)",
+      "gradeId": "grade_prep_1",
+      "subjectId": "subj_math",
+      "classroomId": "room_a1",
+      "capacity": 25
+    },
+    {
+      "id": "group_math_prep2_a",
+      "name": "رياضيات — ثاني إعدادي (أ)",
+      "gradeId": "grade_prep_2",
+      "subjectId": "subj_math",
+      "classroomId": "room_a2",
+      "capacity": 28
+    },
+    {
+      "id": "group_physics_prep3",
+      "name": "فيزياء — ثالث إعدادي",
+      "gradeId": "grade_prep_3",
+      "subjectId": "subj_physics",
+      "classroomId": "room_b1",
+      "capacity": 22
+    },
+    {
+      "id": "group_math_sec1",
+      "name": "رياضيات — أول ثانوي",
+      "gradeId": "grade_sec_1",
+      "subjectId": "subj_math",
+      "classroomId": "room_a1",
+      "capacity": 30
+    }
+  ],
+  "schedules": [
+    { "id": "sch_math_prep1_mon", "groupId": "group_math_prep1_a", "weekday": 1, "startTime": "16:00", "endTime": "17:30" },
+    { "id": "sch_math_prep1_wed", "groupId": "group_math_prep1_a", "weekday": 3, "startTime": "16:00", "endTime": "17:30" },
+    { "id": "sch_math_prep2_tue", "groupId": "group_math_prep2_a", "weekday": 2, "startTime": "17:00", "endTime": "18:30" },
+    { "id": "sch_math_prep2_thu", "groupId": "group_math_prep2_a", "weekday": 4, "startTime": "17:00", "endTime": "18:30" },
+    { "id": "sch_physics_sun", "groupId": "group_physics_prep3", "weekday": 7, "startTime": "15:00", "endTime": "16:30" },
+    { "id": "sch_math_sec_sat", "groupId": "group_math_sec1", "weekday": 6, "startTime": "10:00", "endTime": "12:00" },
+    { "id": "sch_math_sec_wed", "groupId": "group_math_sec1", "weekday": 3, "startTime": "18:00", "endTime": "20:00" }
+  ],
+  "students": [
+    { "id": "stu_ahmed", "name": "أحمد علي", "gradeId": "grade_prep_1", "phone": "01011112222", "fee": 1200 },
+    { "id": "stu_sara", "name": "سارة محمد", "gradeId": "grade_prep_1", "phone": "01022223333", "fee": 1200 },
+    { "id": "stu_omar", "name": "عمر خالد", "gradeId": "grade_prep_2", "phone": "01033334444", "fee": 1300 },
+    { "id": "stu_nour", "name": "نور حسن", "gradeId": "grade_prep_2", "phone": "01044445555", "fee": 1300 },
+    { "id": "stu_youssef", "name": "يوسف إبراهيم", "gradeId": "grade_prep_3", "phone": "01055556666", "fee": 1400 },
+    { "id": "stu_layan", "name": "ليان سمير", "gradeId": "grade_prep_3", "phone": "01066667777", "fee": 1400 },
+    { "id": "stu_karim", "name": "كريم فادي", "gradeId": "grade_sec_1", "phone": "01077778888", "fee": 1600 },
+    { "id": "stu_maya", "name": "مايا طارق", "gradeId": "grade_sec_1", "phone": "01088889999", "fee": 1600 }
+  ]
+}

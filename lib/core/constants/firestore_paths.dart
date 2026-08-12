@@ -14,6 +14,7 @@ abstract final class FirestorePaths {
   static const enrollments = 'enrollments';
   static const enrollmentSubjects = 'enrollment_subjects';
   static const attendances = 'attendances';
+  static const evaluations = 'evaluations';
   static const devices = 'devices';
   static const biometricMappings = 'biometric_mappings';
   static const notifications = 'notifications';

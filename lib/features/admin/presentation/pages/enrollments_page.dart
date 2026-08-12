@@ -7,7 +7,14 @@ import 'package:fingerprint_app/features/admin/domain/repositories/admin_reposit
 import 'package:fingerprint_app/features/admin/presentation/cubit/crud_list_cubit.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/admin_page_frame.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/responsive_data_table.dart';
+import 'package:fingerprint_app/features/admin/presentation/widgets/searchable_select.dart';
 import 'package:fingerprint_app/l10n/app_localizations.dart';
+
+String _enrollmentTypeLabel(AppLocalizations l10n, EnrollmentType type) {
+  return type == EnrollmentType.full
+      ? l10n.fullAllSubjects
+      : l10n.partialSelected;
+}
 
 class EnrollmentsPage extends StatelessWidget {
   const EnrollmentsPage({super.key});
@@ -88,53 +95,49 @@ class _EnrollmentsView extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        DropdownButtonFormField<String>(
-                          value: students.any((s) => s.id == studentId)
-                              ? studentId
-                              : students.first.id,
-                          decoration:
-                              InputDecoration(labelText: l10n.student),
-                          items: [
-                            for (final s in students)
-                              DropdownMenuItem(
-                                value: s.id,
-                                child: Text(s.name),
+                        SearchableSelectField<Student>(
+                          label: l10n.student,
+                          value: students.cast<Student?>().firstWhere(
+                                (s) => s?.id == studentId,
+                                orElse: () => students.first,
                               ),
-                          ],
-                          onChanged: (v) => setState(() => studentId = v!),
-                        ),
-                        const SizedBox(height: 12),
-                        DropdownButtonFormField<String>(
-                          value: grades.any((g) => g.id == gradeId)
-                              ? gradeId
-                              : grades.first.id,
-                          decoration: InputDecoration(labelText: l10n.grade),
-                          items: [
-                            for (final g in grades)
-                              DropdownMenuItem(
-                                value: g.id,
-                                child: Text(g.name),
-                              ),
-                          ],
-                          onChanged: (v) => setState(() => gradeId = v!),
-                        ),
-                        const SizedBox(height: 12),
-                        DropdownButtonFormField<EnrollmentType>(
-                          value: type,
-                          decoration: InputDecoration(
-                            labelText: l10n.enrollmentType,
+                          labelOf: (s) => s.name,
+                          onSearch: (q) => searchableLocalFilter(
+                            items: students,
+                            query: q,
+                            labelOf: (s) => s.name,
                           ),
-                          items: [
-                            DropdownMenuItem(
-                              value: EnrollmentType.full,
-                              child: Text(l10n.fullAllSubjects),
-                            ),
-                            DropdownMenuItem(
-                              value: EnrollmentType.partial,
-                              child: Text(l10n.partialSelected),
-                            ),
-                          ],
-                          onChanged: (v) => setState(() => type = v!),
+                          onChanged: (s) =>
+                              setState(() => studentId = s?.id ?? studentId),
+                        ),
+                        const SizedBox(height: 12),
+                        SearchableSelectField<Grade>(
+                          label: l10n.grade,
+                          value: grades.cast<Grade?>().firstWhere(
+                                (g) => g?.id == gradeId,
+                                orElse: () => grades.first,
+                              ),
+                          labelOf: (g) => g.name,
+                          onSearch: (q) => searchableLocalFilter(
+                            items: grades,
+                            query: q,
+                            labelOf: (g) => g.name,
+                          ),
+                          onChanged: (g) =>
+                              setState(() => gradeId = g?.id ?? gradeId),
+                        ),
+                        const SizedBox(height: 12),
+                        SearchableSelectField<EnrollmentType>(
+                          label: l10n.enrollmentType,
+                          value: type,
+                          labelOf: (t) => _enrollmentTypeLabel(l10n, t),
+                          onSearch: (q) => searchableLocalFilter(
+                            items: EnrollmentType.values,
+                            query: q,
+                            labelOf: (t) => _enrollmentTypeLabel(l10n, t),
+                          ),
+                          onChanged: (v) =>
+                              setState(() => type = v ?? type),
                         ),
                         const SizedBox(height: 12),
                         TextFormField(

@@ -95,7 +95,10 @@ class AdminPageFrame extends StatelessWidget {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(18),
-                    child: child,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: child,
+                    ),
                   ),
                 ),
               ),

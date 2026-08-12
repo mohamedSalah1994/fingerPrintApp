@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:fingerprint_app/features/admin/presentation/pages/attendance_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/classrooms_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/dashboard_page.dart';
+import 'package:fingerprint_app/features/admin/presentation/pages/devices_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/enrollments_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/grades_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/groups_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/parents_page.dart';
-import 'package:fingerprint_app/features/admin/presentation/pages/schedules_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/stages_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/students_page.dart';
+import 'package:fingerprint_app/features/admin/presentation/pages/student_detail_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/subjects_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/pages/teachers_page.dart';
+import 'package:fingerprint_app/features/admin/presentation/pages/teacher_detail_page.dart';
+import 'package:fingerprint_app/features/admin/presentation/pages/users_page.dart';
 import 'package:fingerprint_app/features/admin/presentation/shell/admin_shell.dart';
 import 'package:fingerprint_app/features/auth/domain/entities/app_user.dart';
 import 'package:fingerprint_app/features/auth/presentation/cubit/auth_cubit.dart';
@@ -44,10 +48,7 @@ GoRouter createRouter(AuthCubit authCubit) {
       return null;
     },
     routes: [
-      GoRoute(
-        path: '/login',
-        builder: (context, state) => const LoginPage(),
-      ),
+      GoRoute(path: '/login', builder: (context, state) => const LoginPage()),
       ShellRoute(
         builder: (context, state, child) => AdminShell(child: child),
         routes: [
@@ -76,8 +77,20 @@ GoRouter createRouter(AuthCubit authCubit) {
             builder: (context, state) => const TeachersPage(),
           ),
           GoRoute(
+            path: '/admin/teachers/:id',
+            builder: (context, state) => TeacherDetailPage(
+              teacherId: state.pathParameters['id']!,
+            ),
+          ),
+          GoRoute(
             path: '/admin/students',
             builder: (context, state) => const StudentsPage(),
+          ),
+          GoRoute(
+            path: '/admin/students/:id',
+            builder: (context, state) => StudentDetailPage(
+              studentId: state.pathParameters['id']!,
+            ),
           ),
           GoRoute(
             path: '/admin/parents',
@@ -88,12 +101,20 @@ GoRouter createRouter(AuthCubit authCubit) {
             builder: (context, state) => const GroupsPage(),
           ),
           GoRoute(
-            path: '/admin/schedules',
-            builder: (context, state) => const SchedulesPage(),
-          ),
-          GoRoute(
             path: '/admin/enrollments',
             builder: (context, state) => const EnrollmentsPage(),
+          ),
+          GoRoute(
+            path: '/admin/attendance',
+            builder: (context, state) => const AttendancePage(),
+          ),
+          GoRoute(
+            path: '/admin/users',
+            builder: (context, state) => const UsersPage(),
+          ),
+          GoRoute(
+            path: '/admin/devices',
+            builder: (context, state) => const DevicesPage(),
           ),
           GoRoute(
             path: '/admin/settings',

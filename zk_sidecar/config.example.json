@@ -1,0 +1,14 @@
+{
+  "firebase_web_api_key": "AIzaSyAjdJsDA0NzvLMn3YrlMcoXO0FapZs_G6w",
+  "firebase_project_id": "fingerprint-app-2026",
+  "admin_email": "admin@center.com",
+  "admin_password": "Admin123!",
+  "branch_id": "default_branch",
+  "sidecar_host": "127.0.0.1",
+  "sidecar_port": 8765,
+  "poll_seconds": 30,
+  "late_after_minutes": 5,
+  "max_device_clock_skew_days": 1,
+  "default_session_start": "03:35",
+  "auto_start_sync_loop": true
+}

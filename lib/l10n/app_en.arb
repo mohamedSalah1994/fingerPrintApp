@@ -31,6 +31,45 @@
   "enrollments": "Enrollments",
   "settings": "Settings",
   "quickShortcuts": "Quick shortcuts",
+  "todayOverview": "Today overview",
+  "attendanceAnalysis": "Today's attendance analysis",
+  "attendanceRate": "Attendance rate",
+  "checkedInToday": "Checked in today",
+  "fingerprintPunchesToday": "Fingerprint punches today",
+  "insightsAndAlerts": "Insights & actions",
+  "todaySessions": "Today's sessions",
+  "noSessionsToday": "No sessions scheduled today",
+  "quickActions": "Quick actions",
+  "actionAddStudent": "Add student",
+  "actionOpenAttendance": "Attendance log",
+  "actionManageDevices": "Devices & sync",
+  "actionManageGroups": "Manage groups",
+  "actionEnrollments": "Enrollments",
+  "actionSchedules": "Weekly schedule",
+  "alertNoDevices": "No fingerprint device registered",
+  "alertStudentsUnmapped": "{count} students without fingerprint link",
+  "@alertStudentsUnmapped": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "alertNoAttendanceToday": "No attendance recorded today yet",
+  "alertHighAbsent": "High absences today: {count}",
+  "@alertHighAbsent": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "alertDevicesReady": "{count} devices ready to sync",
+  "@alertDevicesReady": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "fixLinkFingerprints": "Link fingerprints",
+  "viewDetails": "View details",
+  "systemTotals": "System totals",
+  "devicesOnlineLabel": "Active devices",
   "add": "Add",
   "edit": "Edit",
   "delete": "Delete",
@@ -56,6 +95,8 @@
   "number": "Number",
   "language": "Language",
   "theme": "Theme",
+  "collapseSidebar": "Collapse sidebar",
+  "expandSidebar": "Expand sidebar",
   "lightMode": "Light",
   "darkMode": "Dark",
   "systemMode": "System",
@@ -190,5 +231,211 @@
   "salaryHybrid": "Hybrid",
   "subjectsTitle": "Subjects",
   "gradesTitle": "Grades",
-  "stagesTitle": "Stages"
+  "stagesTitle": "Stages",
+  "attendance": "Attendance",
+  "users": "Users",
+  "addAttendance": "Add attendance",
+  "editAttendance": "Edit attendance",
+  "checkIn": "Check-in",
+  "source": "Source",
+  "statusPresent": "Present",
+  "statusLate": "Late",
+  "statusAbsent": "Absent",
+  "statusExcused": "Excused",
+  "sourceManual": "Manual",
+  "sourceFingerprint": "Fingerprint",
+  "sourceDevice": "Device",
+  "addUser": "Add user",
+  "createAdminUser": "Create admin user",
+  "createTeacherUser": "Create teacher user",
+  "loginEmail": "Login email",
+  "loginPassword": "Login password",
+  "teacherAppLogin": "Teacher app login",
+  "accountLinked": "App account linked",
+  "accountNotLinked": "No app account",
+  "roleAdmin": "Admin",
+  "roleTeacher": "Teacher",
+  "passwordMin6": "Password must be at least 6 characters",
+  "userCreated": "User created successfully",
+  "date": "Date",
+  "status": "Status",
+  "role": "Role",
+  "account": "Account",
+  "userCreateFailed": "Failed to create user: {error}",
+  "@userCreateFailed": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "invalidDate": "Invalid date (yyyy-MM-dd)",
+  "pickDate": "Pick date",
+  "noStudentsYet": "Add a student first",
+  "createLoginHint": "Creates a login so this teacher can open the teacher app",
+  "devices": "Devices",
+  "addDevice": "Add device",
+  "editDevice": "Edit device",
+  "serialNumber": "Serial number",
+  "ipAddress": "IP address",
+  "port": "Port",
+  "commKey": "Comm key",
+  "location": "Location",
+  "forceUdp": "Force UDP",
+  "testConnection": "Test connection",
+  "syncNow": "Sync now",
+  "syncAll": "Sync all",
+  "sidecarOnline": "Sidecar online",
+  "sidecarOffline": "Sidecar offline",
+  "sidecarHint": "On the center PC: run zk_sidecar\\install_autostart.bat and keep it running. In Chrome, allow Local network access for this site, then retry",
+  "sidecarConnecting": "Connecting to helper service…",
+  "sidecarConnectingHint": "Starting the helper automatically and checking connection",
+  "sidecarRetry": "Retry",
+  "startAutoSync": "Start auto-sync loop",
+  "stopAutoSync": "Stop loop",
+  "biometricMappings": "Biometric mappings",
+  "addMapping": "Add mapping",
+  "deviceUserId": "Device user ID",
+  "deviceUsers": "Device users",
+  "linkStudent": "Link student",
+  "mappingSaved": "Mapping saved",
+  "connectionOk": "Connection OK",
+  "connectionFailed": "Connection failed",
+  "syncDone": "Sync completed",
+  "syncFailed": "Sync failed",
+  "attendanceBySession": "By session",
+  "sessionSearch": "Session search",
+  "sessionNumber": "Session #",
+  "sessionStudents": "Session students",
+  "markPresent": "Mark present",
+  "clearAttendance": "Clear attendance",
+  "studentPhone": "Student phone",
+  "allDates": "All dates",
+  "studentsCount": "Students",
+  "sessionSearchHint": "Filter by date, group, or session — tap a session for the roster",
+  "selectSession": "Select session",
+  "selectGroup": "Select group",
+  "noSessionsOnDate": "No sessions on this date",
+  "sessionNotStartedYet": "Not started yet",
+  "notCheckedInYet": "Not checked in yet",
+  "carriedFromPreviousSession": "From previous session",
+  "studentHistory": "Student history",
+  "allGroups": "All groups",
+  "sessionTime": "Session time",
+  "noSessionsForDay": "No sessions or records for this day",
+  "scheduledNoRecordsYet": "Scheduled — no records yet",
+  "offScheduleAttendance": "Outside schedule days",
+  "noHistoryForStudent": "No attendance history for this student",
+  "selectStudent": "Select a student",
+  "presentCount": "Present: {count}",
+  "@presentCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lateCount": "Late: {count}",
+  "@lateCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "absentCount": "Absent: {count}",
+  "@absentCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "punchesCount": "{count} punches",
+  "@punchesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "ungroupedSession": "Ungrouped",
+  "punches": "Punches",
+  "scheduleSlot": "Schedule",
+  "search": "Search",
+  "searchHint": "Type to search…",
+  "searchDebounceHint": "Search runs 1 second after you stop typing",
+  "noSearchResults": "No results",
+  "rowsPerPage": "Rows",
+  "previousPage": "Previous",
+  "nextPage": "Next",
+  "pageOf": "Page {page} of {total}",
+  "@pageOf": {
+    "placeholders": {
+      "page": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "paginationSummary": "{from}–{to} of {total}",
+  "@paginationSummary": {
+    "placeholders": {
+      "from": { "type": "int" },
+      "to": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "groupPeriod": "Group period",
+  "periodDaily": "Daily",
+  "periodWeekly": "Weekly",
+  "periodMonthly": "Monthly",
+  "startDate": "Start date",
+  "endDate": "End date",
+  "sessions": "Weekly session time",
+  "addSession": "Add session",
+  "sessionTeacher": "Session teacher",
+  "selectWeekdays": "Weekdays",
+  "selectWeekdaysHint": "Add a session: pick subject, weekdays (multiple allowed), and time",
+  "groupStudents": "Group students",
+  "selectStudents": "Select students",
+  "selectedStudentsCount": "Selected: {count}",
+  "@selectedStudentsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "selectAllVisible": "Select visible",
+  "clearSelection": "Clear selection",
+  "done": "Done",
+  "noStudentsForGrade": "No students for this grade",
+  "plannedSessions": "Sessions count",
+  "plannedSessionsCount": "{count} sessions in period",
+  "@plannedSessionsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "sessionPlanSummary": "{days} days/week → {count} sessions · attendance for group students",
+  "@sessionPlanSummary": {
+    "placeholders": {
+      "days": { "type": "int" },
+      "count": { "type": "int" }
+    }
+  },
+  "pickAtLeastOneWeekday": "Select at least one weekday",
+  "invalidDateRange": "End date must be after start date",
+  "subjectScopeGrade": "For a specific grade",
+  "subjectScopeStage": "For a stage (all its grades)",
+  "teachingGrades": "Grades taught",
+  "specializedSubjects": "Specialized subjects",
+  "allSubjectsOption": "All grade subjects",
+  "selectedSubjectsOption": "Selected subjects only",
+  "addParentInline": "Add parent with student",
+  "parentName": "Parent name",
+  "parentPhone": "Parent phone",
+  "orLinkExistingParent": "Or link existing parent",
+  "studentDetails": "Student details",
+  "teacherDetails": "Teacher details",
+  "teacherGroups": "Teacher groups",
+  "taughtSessions": "Sessions taught",
+  "evaluations": "Evaluations",
+  "addEvaluation": "Add evaluation",
+  "score": "Score",
+  "attendedSessions": "Sessions attended",
+  "studentGroups": "Student groups",
+  "viewDetails": "View details",
+  "teacherPhoto": "Teacher photo",
+  "teacherPhotoOptional": "Teacher photo (optional)",
+  "pickPhoto": "Choose photo",
+  "changePhoto": "Change photo",
+  "removePhoto": "Remove photo"
 }

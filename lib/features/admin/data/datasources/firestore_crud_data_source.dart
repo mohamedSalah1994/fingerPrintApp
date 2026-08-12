@@ -24,30 +24,40 @@ class FirestoreCrudDataSource<T> {
 
   Stream<List<T>> watchAll({String branchId = AppDefaults.branchId}) {
     return _col.where('branchId', isEqualTo: branchId).snapshots().map((snap) {
-      return snap.docs
-          .where((d) {
-            final data = d.data();
-            return data['deletedAt'] == null && data['placeholder'] != true;
-          })
-          .map((d) => fromMap(d.id, d.data()))
-          .toList(growable: false);
+      final items = <T>[];
+      for (final d in snap.docs) {
+        final data = d.data();
+        if (data['deletedAt'] != null || data['placeholder'] == true) {
+          continue;
+        }
+        try {
+          items.add(fromMap(d.id, data));
+        } catch (_) {
+          // Skip malformed docs so one bad record cannot empty the whole list.
+        }
+      }
+      return items;
     });
   }
 
   Future<List<T>> fetchAll({String branchId = AppDefaults.branchId}) async {
     final snap = await _col.where('branchId', isEqualTo: branchId).get();
-    return snap.docs
-        .where((d) {
-          final data = d.data();
-          return data['deletedAt'] == null && data['placeholder'] != true;
-        })
-        .map((d) => fromMap(d.id, d.data()))
-        .toList();
+    final items = <T>[];
+    for (final d in snap.docs) {
+      final data = d.data();
+      if (data['deletedAt'] != null || data['placeholder'] == true) {
+        continue;
+      }
+      try {
+        items.add(fromMap(d.id, data));
+      } catch (_) {}
+    }
+    return items;
   }
 
   Future<String> create(T entity) async {
     final data = SoftDeleteMapper.withTimestamps(
-      data: toMap(entity),
+      data: _withoutNulls(toMap(entity)),
       isCreate: true,
     );
     final doc = await _col.add(data);
@@ -56,7 +66,7 @@ class FirestoreCrudDataSource<T> {
 
   Future<void> createWithId(String id, T entity) async {
     final data = SoftDeleteMapper.withTimestamps(
-      data: toMap(entity),
+      data: _withoutNulls(toMap(entity)),
       isCreate: true,
     );
     await _col.doc(id).set(data);
@@ -64,7 +74,7 @@ class FirestoreCrudDataSource<T> {
 
   Future<void> update(String id, T entity) async {
     final data = SoftDeleteMapper.withTimestamps(
-      data: toMap(entity),
+      data: _withoutNulls(toMap(entity)),
       isCreate: false,
     );
     await _col.doc(id).update(data);
@@ -75,5 +85,14 @@ class FirestoreCrudDataSource<T> {
       'deletedAt': FieldValue.serverTimestamp(),
       'updatedAt': FieldValue.serverTimestamp(),
     });
+  }
+
+  static Map<String, dynamic> _withoutNulls(Map<String, dynamic> data) {
+    final out = <String, dynamic>{};
+    for (final e in data.entries) {
+      if (e.value == null) continue;
+      out[e.key] = e.value;
+    }
+    return out;
   }
 }

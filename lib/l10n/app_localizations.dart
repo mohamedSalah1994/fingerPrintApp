@@ -251,6 +251,150 @@ abstract class AppLocalizations {
   /// **'Quick shortcuts'**
   String get quickShortcuts;
 
+  /// No description provided for @todayOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Today overview'**
+  String get todayOverview;
+
+  /// No description provided for @attendanceAnalysis.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s attendance analysis'**
+  String get attendanceAnalysis;
+
+  /// No description provided for @attendanceRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance rate'**
+  String get attendanceRate;
+
+  /// No description provided for @checkedInToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Checked in today'**
+  String get checkedInToday;
+
+  /// No description provided for @fingerprintPunchesToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Fingerprint punches today'**
+  String get fingerprintPunchesToday;
+
+  /// No description provided for @insightsAndAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Insights & actions'**
+  String get insightsAndAlerts;
+
+  /// No description provided for @todaySessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s sessions'**
+  String get todaySessions;
+
+  /// No description provided for @noSessionsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'No sessions scheduled today'**
+  String get noSessionsToday;
+
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick actions'**
+  String get quickActions;
+
+  /// No description provided for @actionAddStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Add student'**
+  String get actionAddStudent;
+
+  /// No description provided for @actionOpenAttendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance log'**
+  String get actionOpenAttendance;
+
+  /// No description provided for @actionManageDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'Devices & sync'**
+  String get actionManageDevices;
+
+  /// No description provided for @actionManageGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage groups'**
+  String get actionManageGroups;
+
+  /// No description provided for @actionEnrollments.
+  ///
+  /// In en, this message translates to:
+  /// **'Enrollments'**
+  String get actionEnrollments;
+
+  /// No description provided for @actionSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly schedule'**
+  String get actionSchedules;
+
+  /// No description provided for @alertNoDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'No fingerprint device registered'**
+  String get alertNoDevices;
+
+  /// No description provided for @alertStudentsUnmapped.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} students without fingerprint link'**
+  String alertStudentsUnmapped(int count);
+
+  /// No description provided for @alertNoAttendanceToday.
+  ///
+  /// In en, this message translates to:
+  /// **'No attendance recorded today yet'**
+  String get alertNoAttendanceToday;
+
+  /// No description provided for @alertHighAbsent.
+  ///
+  /// In en, this message translates to:
+  /// **'High absences today: {count}'**
+  String alertHighAbsent(int count);
+
+  /// No description provided for @alertDevicesReady.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} devices ready to sync'**
+  String alertDevicesReady(int count);
+
+  /// No description provided for @fixLinkFingerprints.
+  ///
+  /// In en, this message translates to:
+  /// **'Link fingerprints'**
+  String get fixLinkFingerprints;
+
+  /// No description provided for @viewDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'View details'**
+  String get viewDetails;
+
+  /// No description provided for @systemTotals.
+  ///
+  /// In en, this message translates to:
+  /// **'System totals'**
+  String get systemTotals;
+
+  /// No description provided for @devicesOnlineLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Active devices'**
+  String get devicesOnlineLabel;
+
   /// No description provided for @add.
   ///
   /// In en, this message translates to:
@@ -370,6 +514,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Theme'**
   String get theme;
+
+  /// No description provided for @collapseSidebar.
+  ///
+  /// In en, this message translates to:
+  /// **'Collapse sidebar'**
+  String get collapseSidebar;
+
+  /// No description provided for @expandSidebar.
+  ///
+  /// In en, this message translates to:
+  /// **'Expand sidebar'**
+  String get expandSidebar;
 
   /// No description provided for @lightMode.
   ///
@@ -994,6 +1150,912 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stages'**
   String get stagesTitle;
+
+  /// No description provided for @attendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Attendance'**
+  String get attendance;
+
+  /// No description provided for @users.
+  ///
+  /// In en, this message translates to:
+  /// **'Users'**
+  String get users;
+
+  /// No description provided for @addAttendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Add attendance'**
+  String get addAttendance;
+
+  /// No description provided for @editAttendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit attendance'**
+  String get editAttendance;
+
+  /// No description provided for @checkIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in'**
+  String get checkIn;
+
+  /// No description provided for @source.
+  ///
+  /// In en, this message translates to:
+  /// **'Source'**
+  String get source;
+
+  /// No description provided for @statusPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Present'**
+  String get statusPresent;
+
+  /// No description provided for @statusLate.
+  ///
+  /// In en, this message translates to:
+  /// **'Late'**
+  String get statusLate;
+
+  /// No description provided for @statusAbsent.
+  ///
+  /// In en, this message translates to:
+  /// **'Absent'**
+  String get statusAbsent;
+
+  /// No description provided for @statusExcused.
+  ///
+  /// In en, this message translates to:
+  /// **'Excused'**
+  String get statusExcused;
+
+  /// No description provided for @sourceManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual'**
+  String get sourceManual;
+
+  /// No description provided for @sourceFingerprint.
+  ///
+  /// In en, this message translates to:
+  /// **'Fingerprint'**
+  String get sourceFingerprint;
+
+  /// No description provided for @sourceDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Device'**
+  String get sourceDevice;
+
+  /// No description provided for @addUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Add user'**
+  String get addUser;
+
+  /// No description provided for @createAdminUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Create admin user'**
+  String get createAdminUser;
+
+  /// No description provided for @createTeacherUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Create teacher user'**
+  String get createTeacherUser;
+
+  /// No description provided for @loginEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Login email'**
+  String get loginEmail;
+
+  /// No description provided for @loginPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Login password'**
+  String get loginPassword;
+
+  /// No description provided for @teacherAppLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher app login'**
+  String get teacherAppLogin;
+
+  /// No description provided for @accountLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'App account linked'**
+  String get accountLinked;
+
+  /// No description provided for @accountNotLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'No app account'**
+  String get accountNotLinked;
+
+  /// No description provided for @roleAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin'**
+  String get roleAdmin;
+
+  /// No description provided for @roleTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher'**
+  String get roleTeacher;
+
+  /// No description provided for @passwordMin6.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordMin6;
+
+  /// No description provided for @userCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'User created successfully'**
+  String get userCreated;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @role.
+  ///
+  /// In en, this message translates to:
+  /// **'Role'**
+  String get role;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @userCreateFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to create user: {error}'**
+  String userCreateFailed(String error);
+
+  /// No description provided for @invalidDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid date (yyyy-MM-dd)'**
+  String get invalidDate;
+
+  /// No description provided for @pickDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick date'**
+  String get pickDate;
+
+  /// No description provided for @noStudentsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a student first'**
+  String get noStudentsYet;
+
+  /// No description provided for @createLoginHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Creates a login so this teacher can open the teacher app'**
+  String get createLoginHint;
+
+  /// No description provided for @devices.
+  ///
+  /// In en, this message translates to:
+  /// **'Devices'**
+  String get devices;
+
+  /// No description provided for @addDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Add device'**
+  String get addDevice;
+
+  /// No description provided for @editDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit device'**
+  String get editDevice;
+
+  /// No description provided for @serialNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Serial number'**
+  String get serialNumber;
+
+  /// No description provided for @ipAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'IP address'**
+  String get ipAddress;
+
+  /// No description provided for @port.
+  ///
+  /// In en, this message translates to:
+  /// **'Port'**
+  String get port;
+
+  /// No description provided for @commKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Comm key'**
+  String get commKey;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @forceUdp.
+  ///
+  /// In en, this message translates to:
+  /// **'Force UDP'**
+  String get forceUdp;
+
+  /// No description provided for @testConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test connection'**
+  String get testConnection;
+
+  /// No description provided for @syncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync now'**
+  String get syncNow;
+
+  /// No description provided for @syncAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync all'**
+  String get syncAll;
+
+  /// No description provided for @sidecarOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Sidecar online'**
+  String get sidecarOnline;
+
+  /// No description provided for @sidecarOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Sidecar offline'**
+  String get sidecarOffline;
+
+  /// No description provided for @sidecarHint.
+  ///
+  /// In en, this message translates to:
+  /// **'On the center PC: run zk_sidecar\\install_autostart.bat and keep it running. In Chrome, allow Local network access for this site, then retry'**
+  String get sidecarHint;
+
+  /// No description provided for @sidecarConnecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting to helper service…'**
+  String get sidecarConnecting;
+
+  /// No description provided for @sidecarConnectingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting the helper automatically and checking connection'**
+  String get sidecarConnectingHint;
+
+  /// No description provided for @sidecarRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get sidecarRetry;
+
+  /// No description provided for @startAutoSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Start auto-sync loop'**
+  String get startAutoSync;
+
+  /// No description provided for @stopAutoSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop loop'**
+  String get stopAutoSync;
+
+  /// No description provided for @biometricMappings.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric mappings'**
+  String get biometricMappings;
+
+  /// No description provided for @addMapping.
+  ///
+  /// In en, this message translates to:
+  /// **'Add mapping'**
+  String get addMapping;
+
+  /// No description provided for @deviceUserId.
+  ///
+  /// In en, this message translates to:
+  /// **'Device user ID'**
+  String get deviceUserId;
+
+  /// No description provided for @deviceUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Device users'**
+  String get deviceUsers;
+
+  /// No description provided for @linkStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Link student'**
+  String get linkStudent;
+
+  /// No description provided for @mappingSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Mapping saved'**
+  String get mappingSaved;
+
+  /// No description provided for @connectionOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection OK'**
+  String get connectionOk;
+
+  /// No description provided for @connectionFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection failed'**
+  String get connectionFailed;
+
+  /// No description provided for @syncDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync completed'**
+  String get syncDone;
+
+  /// No description provided for @syncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync failed'**
+  String get syncFailed;
+
+  /// No description provided for @attendanceBySession.
+  ///
+  /// In en, this message translates to:
+  /// **'By session'**
+  String get attendanceBySession;
+
+  /// No description provided for @sessionSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Session search'**
+  String get sessionSearch;
+
+  /// No description provided for @sessionNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Session #'**
+  String get sessionNumber;
+
+  /// No description provided for @sessionStudents.
+  ///
+  /// In en, this message translates to:
+  /// **'Session students'**
+  String get sessionStudents;
+
+  /// No description provided for @markPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark present'**
+  String get markPresent;
+
+  /// No description provided for @clearAttendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear attendance'**
+  String get clearAttendance;
+
+  /// No description provided for @studentPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Student phone'**
+  String get studentPhone;
+
+  /// No description provided for @allDates.
+  ///
+  /// In en, this message translates to:
+  /// **'All dates'**
+  String get allDates;
+
+  /// No description provided for @studentsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Students'**
+  String get studentsCount;
+
+  /// No description provided for @sessionSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by date, group, or session — tap a session for the roster'**
+  String get sessionSearchHint;
+
+  /// No description provided for @selectSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Select session'**
+  String get selectSession;
+
+  /// No description provided for @selectGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Select group'**
+  String get selectGroup;
+
+  /// No description provided for @noSessionsOnDate.
+  ///
+  /// In en, this message translates to:
+  /// **'No sessions on this date'**
+  String get noSessionsOnDate;
+
+  /// No description provided for @sessionNotStartedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not started yet'**
+  String get sessionNotStartedYet;
+
+  /// No description provided for @notCheckedInYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not checked in yet'**
+  String get notCheckedInYet;
+
+  /// No description provided for @carriedFromPreviousSession.
+  ///
+  /// In en, this message translates to:
+  /// **'From previous session'**
+  String get carriedFromPreviousSession;
+
+  /// No description provided for @studentHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Student history'**
+  String get studentHistory;
+
+  /// No description provided for @allGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'All groups'**
+  String get allGroups;
+
+  /// No description provided for @sessionTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Session time'**
+  String get sessionTime;
+
+  /// No description provided for @noSessionsForDay.
+  ///
+  /// In en, this message translates to:
+  /// **'No sessions or records for this day'**
+  String get noSessionsForDay;
+
+  /// No description provided for @scheduledNoRecordsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled — no records yet'**
+  String get scheduledNoRecordsYet;
+
+  /// No description provided for @offScheduleAttendance.
+  ///
+  /// In en, this message translates to:
+  /// **'Outside schedule days'**
+  String get offScheduleAttendance;
+
+  /// No description provided for @noHistoryForStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'No attendance history for this student'**
+  String get noHistoryForStudent;
+
+  /// No description provided for @selectStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a student'**
+  String get selectStudent;
+
+  /// No description provided for @presentCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Present: {count}'**
+  String presentCount(int count);
+
+  /// No description provided for @lateCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Late: {count}'**
+  String lateCount(int count);
+
+  /// No description provided for @absentCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Absent: {count}'**
+  String absentCount(int count);
+
+  /// No description provided for @punchesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} punches'**
+  String punchesCount(int count);
+
+  /// No description provided for @ungroupedSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Ungrouped'**
+  String get ungroupedSession;
+
+  /// No description provided for @punches.
+  ///
+  /// In en, this message translates to:
+  /// **'Punches'**
+  String get punches;
+
+  /// No description provided for @scheduleSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get scheduleSlot;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type to search…'**
+  String get searchHint;
+
+  /// No description provided for @searchDebounceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search runs 1 second after you stop typing'**
+  String get searchDebounceHint;
+
+  /// No description provided for @noSearchResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No results'**
+  String get noSearchResults;
+
+  /// No description provided for @rowsPerPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Rows'**
+  String get rowsPerPage;
+
+  /// No description provided for @previousPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get previousPage;
+
+  /// No description provided for @nextPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextPage;
+
+  /// No description provided for @pageOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Page {page} of {total}'**
+  String pageOf(int page, int total);
+
+  /// No description provided for @paginationSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{from}–{to} of {total}'**
+  String paginationSummary(int from, int to, int total);
+
+  /// No description provided for @groupPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Group period'**
+  String get groupPeriod;
+
+  /// No description provided for @periodDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get periodDaily;
+
+  /// No description provided for @periodWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get periodWeekly;
+
+  /// No description provided for @periodMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get periodMonthly;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get startDate;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get endDate;
+
+  /// No description provided for @sessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly session time'**
+  String get sessions;
+
+  /// No description provided for @addSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Add session'**
+  String get addSession;
+
+  /// No description provided for @sessionTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'Session teacher'**
+  String get sessionTeacher;
+
+  /// No description provided for @selectWeekdays.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekdays'**
+  String get selectWeekdays;
+
+  /// No description provided for @selectWeekdaysHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a session: pick subject, weekdays (multiple allowed), and time'**
+  String get selectWeekdaysHint;
+
+  /// No description provided for @groupStudents.
+  ///
+  /// In en, this message translates to:
+  /// **'Group students'**
+  String get groupStudents;
+
+  /// No description provided for @selectStudents.
+  ///
+  /// In en, this message translates to:
+  /// **'Select students'**
+  String get selectStudents;
+
+  /// No description provided for @selectedStudentsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected: {count}'**
+  String selectedStudentsCount(int count);
+
+  /// No description provided for @selectAllVisible.
+  ///
+  /// In en, this message translates to:
+  /// **'Select visible'**
+  String get selectAllVisible;
+
+  /// No description provided for @clearSelection.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear selection'**
+  String get clearSelection;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @noStudentsForGrade.
+  ///
+  /// In en, this message translates to:
+  /// **'No students for this grade'**
+  String get noStudentsForGrade;
+
+  /// No description provided for @plannedSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Sessions count'**
+  String get plannedSessions;
+
+  /// No description provided for @plannedSessionsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} sessions in period'**
+  String plannedSessionsCount(int count);
+
+  /// No description provided for @sessionPlanSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days/week → {count} sessions · attendance for group students'**
+  String sessionPlanSummary(int days, int count);
+
+  /// No description provided for @pickAtLeastOneWeekday.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one weekday'**
+  String get pickAtLeastOneWeekday;
+
+  /// No description provided for @invalidDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'End date must be after start date'**
+  String get invalidDateRange;
+
+  /// No description provided for @subjectScopeGrade.
+  ///
+  /// In en, this message translates to:
+  /// **'For a specific grade'**
+  String get subjectScopeGrade;
+
+  /// No description provided for @subjectScopeStage.
+  ///
+  /// In en, this message translates to:
+  /// **'For a stage (all its grades)'**
+  String get subjectScopeStage;
+
+  /// No description provided for @teachingGrades.
+  ///
+  /// In en, this message translates to:
+  /// **'Grades taught'**
+  String get teachingGrades;
+
+  /// No description provided for @specializedSubjects.
+  ///
+  /// In en, this message translates to:
+  /// **'Specialized subjects'**
+  String get specializedSubjects;
+
+  /// No description provided for @allSubjectsOption.
+  ///
+  /// In en, this message translates to:
+  /// **'All grade subjects'**
+  String get allSubjectsOption;
+
+  /// No description provided for @selectedSubjectsOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected subjects only'**
+  String get selectedSubjectsOption;
+
+  /// No description provided for @addParentInline.
+  ///
+  /// In en, this message translates to:
+  /// **'Add parent with student'**
+  String get addParentInline;
+
+  /// No description provided for @parentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent name'**
+  String get parentName;
+
+  /// No description provided for @parentPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent phone'**
+  String get parentPhone;
+
+  /// No description provided for @orLinkExistingParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Or link existing parent'**
+  String get orLinkExistingParent;
+
+  /// No description provided for @studentDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Student details'**
+  String get studentDetails;
+
+  /// No description provided for @teacherDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher details'**
+  String get teacherDetails;
+
+  /// No description provided for @teacherGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher groups'**
+  String get teacherGroups;
+
+  /// No description provided for @taughtSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Sessions taught'**
+  String get taughtSessions;
+
+  /// No description provided for @evaluations.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluations'**
+  String get evaluations;
+
+  /// No description provided for @addEvaluation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add evaluation'**
+  String get addEvaluation;
+
+  /// No description provided for @score.
+  ///
+  /// In en, this message translates to:
+  /// **'Score'**
+  String get score;
+
+  /// No description provided for @attendedSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Sessions attended'**
+  String get attendedSessions;
+
+  /// No description provided for @studentGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Student groups'**
+  String get studentGroups;
+
+  /// No description provided for @teacherPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher photo'**
+  String get teacherPhoto;
+
+  /// No description provided for @teacherPhotoOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher photo (optional)'**
+  String get teacherPhotoOptional;
+
+  /// No description provided for @pickPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose photo'**
+  String get pickPhoto;
+
+  /// No description provided for @changePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Change photo'**
+  String get changePhoto;
+
+  /// No description provided for @removePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove photo'**
+  String get removePhoto;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

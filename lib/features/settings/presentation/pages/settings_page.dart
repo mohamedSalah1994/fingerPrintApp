@@ -51,12 +51,12 @@ class SettingsPage extends StatelessWidget {
                             ButtonSegment(
                               value: 'ar',
                               label: Text(l10n.arabic),
-                              icon: const Icon(Icons.translate),
+                              icon: const Icon(Icons.language_outlined),
                             ),
                             ButtonSegment(
                               value: 'en',
                               label: Text(l10n.english),
-                              icon: const Icon(Icons.language),
+                              icon: const Icon(Icons.language_outlined),
                             ),
                           ],
                           selected: {state.locale.languageCode},

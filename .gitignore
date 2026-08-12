@@ -23,6 +23,11 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
+# ZKTeco sidecar local secrets
+zk_sidecar/config.json
+zk_sidecar/.venv/
+zk_sidecar/__pycache__/
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id

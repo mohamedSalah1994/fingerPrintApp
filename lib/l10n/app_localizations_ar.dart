@@ -89,6 +89,84 @@ class AppLocalizationsAr extends AppLocalizations {
   String get quickShortcuts => 'اختصارات سريعة';
 
   @override
+  String get todayOverview => 'نظرة اليوم';
+
+  @override
+  String get attendanceAnalysis => 'تحليل الحضور اليوم';
+
+  @override
+  String get attendanceRate => 'نسبة الحضور';
+
+  @override
+  String get checkedInToday => 'حضروا اليوم';
+
+  @override
+  String get fingerprintPunchesToday => 'بصمات اليوم';
+
+  @override
+  String get insightsAndAlerts => 'تنبيهات وإجراءات';
+
+  @override
+  String get todaySessions => 'حصص اليوم';
+
+  @override
+  String get noSessionsToday => 'لا توجد حصص مجدولة اليوم';
+
+  @override
+  String get quickActions => 'إجراءات سريعة';
+
+  @override
+  String get actionAddStudent => 'إضافة طالب';
+
+  @override
+  String get actionOpenAttendance => 'سجل الحضور';
+
+  @override
+  String get actionManageDevices => 'الأجهزة والمزامنة';
+
+  @override
+  String get actionManageGroups => 'إدارة المجموعات';
+
+  @override
+  String get actionEnrollments => 'التسجيلات';
+
+  @override
+  String get actionSchedules => 'الجدول الأسبوعي';
+
+  @override
+  String get alertNoDevices => 'لا يوجد جهاز بصمة مسجّل';
+
+  @override
+  String alertStudentsUnmapped(int count) {
+    return '$count طالب بدون ربط بصمة';
+  }
+
+  @override
+  String get alertNoAttendanceToday => 'لا يوجد حضور مسجّل اليوم بعد';
+
+  @override
+  String alertHighAbsent(int count) {
+    return 'غياب مرتفع اليوم: $count';
+  }
+
+  @override
+  String alertDevicesReady(int count) {
+    return '$count جهاز جاهز للمزامنة';
+  }
+
+  @override
+  String get fixLinkFingerprints => 'ربط البصمات';
+
+  @override
+  String get viewDetails => 'عرض التفاصيل';
+
+  @override
+  String get systemTotals => 'إحصائيات النظام';
+
+  @override
+  String get devicesOnlineLabel => 'أجهزة نشطة';
+
+  @override
   String get add => 'إضافة';
 
   @override
@@ -149,6 +227,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get theme => 'المظهر';
+
+  @override
+  String get collapseSidebar => 'طي الشريط الجانبي';
+
+  @override
+  String get expandSidebar => 'توسيع الشريط الجانبي';
 
   @override
   String get lightMode => 'فاتح';
@@ -473,4 +557,477 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get stagesTitle => 'المراحل';
+
+  @override
+  String get attendance => 'الحضور والغياب';
+
+  @override
+  String get users => 'المستخدمون';
+
+  @override
+  String get addAttendance => 'إضافة حضور';
+
+  @override
+  String get editAttendance => 'تعديل حضور';
+
+  @override
+  String get checkIn => 'وقت الحضور';
+
+  @override
+  String get source => 'المصدر';
+
+  @override
+  String get statusPresent => 'حاضر';
+
+  @override
+  String get statusLate => 'متأخر';
+
+  @override
+  String get statusAbsent => 'غائب';
+
+  @override
+  String get statusExcused => 'بعذر';
+
+  @override
+  String get sourceManual => 'يدوي';
+
+  @override
+  String get sourceFingerprint => 'بصمة';
+
+  @override
+  String get sourceDevice => 'جهاز';
+
+  @override
+  String get addUser => 'إضافة مستخدم';
+
+  @override
+  String get createAdminUser => 'إنشاء مستخدم مدير';
+
+  @override
+  String get createTeacherUser => 'إنشاء مستخدم مدرس';
+
+  @override
+  String get loginEmail => 'بريد الدخول';
+
+  @override
+  String get loginPassword => 'كلمة مرور الدخول';
+
+  @override
+  String get teacherAppLogin => 'دخول تطبيق المدرس';
+
+  @override
+  String get accountLinked => 'حساب التطبيق مرتبط';
+
+  @override
+  String get accountNotLinked => 'لا يوجد حساب تطبيق';
+
+  @override
+  String get roleAdmin => 'مدير';
+
+  @override
+  String get roleTeacher => 'مدرس';
+
+  @override
+  String get passwordMin6 => 'كلمة المرور ٦ أحرف على الأقل';
+
+  @override
+  String get userCreated => 'تم إنشاء المستخدم بنجاح';
+
+  @override
+  String get date => 'التاريخ';
+
+  @override
+  String get status => 'الحالة';
+
+  @override
+  String get role => 'الدور';
+
+  @override
+  String get account => 'الحساب';
+
+  @override
+  String userCreateFailed(String error) {
+    return 'فشل إنشاء المستخدم: $error';
+  }
+
+  @override
+  String get invalidDate => 'تاريخ غير صالح (yyyy-MM-dd)';
+
+  @override
+  String get pickDate => 'اختر التاريخ';
+
+  @override
+  String get noStudentsYet => 'أضف طالباً أولاً';
+
+  @override
+  String get createLoginHint => 'ينشئ حساب دخول لفتح تطبيق المدرس';
+
+  @override
+  String get devices => 'الأجهزة';
+
+  @override
+  String get addDevice => 'إضافة جهاز';
+
+  @override
+  String get editDevice => 'تعديل جهاز';
+
+  @override
+  String get serialNumber => 'الرقم التسلسلي';
+
+  @override
+  String get ipAddress => 'عنوان IP';
+
+  @override
+  String get port => 'المنفذ';
+
+  @override
+  String get commKey => 'مفتاح الاتصال';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get forceUdp => 'فرض UDP';
+
+  @override
+  String get testConnection => 'اختبار الاتصال';
+
+  @override
+  String get syncNow => 'مزامنة الآن';
+
+  @override
+  String get syncAll => 'مزامنة الكل';
+
+  @override
+  String get sidecarOnline => 'الخدمة المساعدة متصلّة';
+
+  @override
+  String get sidecarOffline => 'الخدمة المساعدة غير متصلّة';
+
+  @override
+  String get sidecarHint => 'على نفس جهاز السنتر: شغّل zk_sidecar\\install_autostart.bat واترك الخدمة تعمل. من Chrome اسمح بالوصول للشبكة المحلية لهذا الموقع ثم أعد المحاولة';
+
+  @override
+  String get sidecarConnecting => 'جاري الاتصال بالخدمة المساعدة…';
+
+  @override
+  String get sidecarConnectingHint => 'يتم تشغيل الخدمة تلقائيًا والتحقق من الاتصال';
+
+  @override
+  String get sidecarRetry => 'إعادة المحاولة';
+
+  @override
+  String get startAutoSync => 'بدء المزامنة التلقائية';
+
+  @override
+  String get stopAutoSync => 'إيقاف الحلقة';
+
+  @override
+  String get biometricMappings => 'ربط البصمة';
+
+  @override
+  String get addMapping => 'إضافة ربط';
+
+  @override
+  String get deviceUserId => 'معرّف المستخدم على الجهاز';
+
+  @override
+  String get deviceUsers => 'مستخدمو الجهاز';
+
+  @override
+  String get linkStudent => 'ربط طالب';
+
+  @override
+  String get mappingSaved => 'تم حفظ الربط';
+
+  @override
+  String get connectionOk => 'الاتصال ناجح';
+
+  @override
+  String get connectionFailed => 'فشل الاتصال';
+
+  @override
+  String get syncDone => 'اكتملت المزامنة';
+
+  @override
+  String get syncFailed => 'فشلت المزامنة';
+
+  @override
+  String get attendanceBySession => 'حسب الحصة';
+
+  @override
+  String get sessionSearch => 'بحث بالحصة';
+
+  @override
+  String get sessionNumber => 'رقم الحصة';
+
+  @override
+  String get sessionStudents => 'طلاب الحصة';
+
+  @override
+  String get markPresent => 'تسجيل حضور';
+
+  @override
+  String get clearAttendance => 'إلغاء الحضور';
+
+  @override
+  String get studentPhone => 'هاتف الطالب';
+
+  @override
+  String get allDates => 'كل التواريخ';
+
+  @override
+  String get studentsCount => 'عدد الطلاب';
+
+  @override
+  String get sessionSearchHint => 'فلتر بالتاريخ أو المجموعة أو الحصة — اضغط حصة لعرض الطلاب';
+
+  @override
+  String get selectSession => 'اختر الحصة';
+
+  @override
+  String get selectGroup => 'اختر المجموعة';
+
+  @override
+  String get noSessionsOnDate => 'لا توجد حصص في هذا التاريخ';
+
+  @override
+  String get sessionNotStartedYet => 'لم تبدأ بعد';
+
+  @override
+  String get notCheckedInYet => 'لم يسجّل بعد';
+
+  @override
+  String get carriedFromPreviousSession => 'من الحصة السابقة';
+
+  @override
+  String get studentHistory => 'سجل الطالب';
+
+  @override
+  String get allGroups => 'كل المجموعات';
+
+  @override
+  String get sessionTime => 'وقت الحصة';
+
+  @override
+  String get noSessionsForDay => 'لا توجد حصص أو سجلات لهذا اليوم';
+
+  @override
+  String get scheduledNoRecordsYet => 'حصة مجدولة — لا سجلات بعد';
+
+  @override
+  String get offScheduleAttendance => 'خارج أيام الجدول';
+
+  @override
+  String get noHistoryForStudent => 'لا يوجد سجل حضور لهذا الطالب';
+
+  @override
+  String get selectStudent => 'اختر طالبًا';
+
+  @override
+  String presentCount(int count) {
+    return 'حاضر: $count';
+  }
+
+  @override
+  String lateCount(int count) {
+    return 'متأخر: $count';
+  }
+
+  @override
+  String absentCount(int count) {
+    return 'غائب: $count';
+  }
+
+  @override
+  String punchesCount(int count) {
+    return '$count بصمة';
+  }
+
+  @override
+  String get ungroupedSession => 'بدون مجموعة';
+
+  @override
+  String get punches => 'البصمات';
+
+  @override
+  String get scheduleSlot => 'الجدول';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get searchHint => 'اكتب للبحث…';
+
+  @override
+  String get searchDebounceHint => 'يتم البحث بعد ثانية من التوقف عن الكتابة';
+
+  @override
+  String get noSearchResults => 'لا توجد نتائج';
+
+  @override
+  String get rowsPerPage => 'لكل صفحة';
+
+  @override
+  String get previousPage => 'السابق';
+
+  @override
+  String get nextPage => 'التالي';
+
+  @override
+  String pageOf(int page, int total) {
+    return 'صفحة $page من $total';
+  }
+
+  @override
+  String paginationSummary(int from, int to, int total) {
+    return '$from–$to من $total';
+  }
+
+  @override
+  String get groupPeriod => 'مدة المجموعة';
+
+  @override
+  String get periodDaily => 'يومي';
+
+  @override
+  String get periodWeekly => 'أسبوعي';
+
+  @override
+  String get periodMonthly => 'شهري';
+
+  @override
+  String get startDate => 'من تاريخ';
+
+  @override
+  String get endDate => 'إلى تاريخ';
+
+  @override
+  String get sessions => 'موعد الحصة الأسبوعي';
+
+  @override
+  String get addSession => 'إضافة حصة';
+
+  @override
+  String get sessionTeacher => 'مدرس الحصة';
+
+  @override
+  String get selectWeekdays => 'أيام الأسبوع';
+
+  @override
+  String get selectWeekdaysHint => 'أضف حصة: اختر المادة والأيام (يمكن أكثر من يوم) والوقت';
+
+  @override
+  String get groupStudents => 'طلاب المجموعة';
+
+  @override
+  String get selectStudents => 'اختر الطلاب';
+
+  @override
+  String selectedStudentsCount(int count) {
+    return 'مختار: $count';
+  }
+
+  @override
+  String get selectAllVisible => 'تحديد الظاهر';
+
+  @override
+  String get clearSelection => 'مسح التحديد';
+
+  @override
+  String get done => 'تم';
+
+  @override
+  String get noStudentsForGrade => 'لا يوجد طلاب لهذا الصف';
+
+  @override
+  String get plannedSessions => 'عدد الحصص';
+
+  @override
+  String plannedSessionsCount(int count) {
+    return '$count حصة خلال المدة';
+  }
+
+  @override
+  String sessionPlanSummary(int days, int count) {
+    return '$days أيام/أسبوع → $count حصة · الحضور والغياب على طلاب المجموعة';
+  }
+
+  @override
+  String get pickAtLeastOneWeekday => 'اختر يومًا واحدًا على الأقل للحصص';
+
+  @override
+  String get invalidDateRange => 'تاريخ النهاية يجب أن يكون بعد البداية';
+
+  @override
+  String get subjectScopeGrade => 'على صف محدد';
+
+  @override
+  String get subjectScopeStage => 'على مرحلة (كل صفوفها)';
+
+  @override
+  String get teachingGrades => 'الصفوف التي يدرّسها';
+
+  @override
+  String get specializedSubjects => 'المواد المتخصص فيها';
+
+  @override
+  String get allSubjectsOption => 'كل مواد الصف';
+
+  @override
+  String get selectedSubjectsOption => 'مواد محددة فقط';
+
+  @override
+  String get addParentInline => 'إضافة ولي أمر مع الطالب';
+
+  @override
+  String get parentName => 'اسم ولي الأمر';
+
+  @override
+  String get parentPhone => 'هاتف ولي الأمر';
+
+  @override
+  String get orLinkExistingParent => 'أو ربط ولي أمر موجود';
+
+  @override
+  String get studentDetails => 'تفاصيل الطالب';
+
+  @override
+  String get teacherDetails => 'تفاصيل المدرس';
+
+  @override
+  String get teacherGroups => 'مجموعات المدرس';
+
+  @override
+  String get taughtSessions => 'حصص يدرّسها';
+
+  @override
+  String get evaluations => 'التقييمات';
+
+  @override
+  String get addEvaluation => 'إضافة تقييم';
+
+  @override
+  String get score => 'الدرجة';
+
+  @override
+  String get attendedSessions => 'حصص حضرها';
+
+  @override
+  String get studentGroups => 'مجموعات الطالب';
+
+  @override
+  String get teacherPhoto => 'صورة المدرس';
+
+  @override
+  String get teacherPhotoOptional => 'صورة المدرس (اختياري)';
+
+  @override
+  String get pickPhoto => 'اختيار صورة';
+
+  @override
+  String get changePhoto => 'تغيير الصورة';
+
+  @override
+  String get removePhoto => 'إزالة الصورة';
 }

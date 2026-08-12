@@ -6,6 +6,7 @@ import 'package:fingerprint_app/features/admin/domain/repositories/admin_reposit
 import 'package:fingerprint_app/features/admin/presentation/cubit/crud_list_cubit.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/admin_page_frame.dart';
 import 'package:fingerprint_app/features/admin/presentation/widgets/responsive_data_table.dart';
+import 'package:fingerprint_app/features/admin/presentation/widgets/searchable_select.dart';
 import 'package:fingerprint_app/l10n/app_localizations.dart';
 
 Map<int, String> _weekdayLabels(AppLocalizations l10n) => {
@@ -88,32 +89,33 @@ class _SchedulesView extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      DropdownButtonFormField<String>(
-                        value: groups.any((g) => g.id == groupId)
-                            ? groupId
-                            : groups.first.id,
-                        decoration: InputDecoration(labelText: l10n.group),
-                        items: [
-                          for (final g in groups)
-                            DropdownMenuItem(
-                              value: g.id,
-                              child: Text(g.name),
+                      SearchableSelectField<StudyGroup>(
+                        label: l10n.group,
+                        value: groups.cast<StudyGroup?>().firstWhere(
+                              (g) => g?.id == groupId,
+                              orElse: () => groups.first,
                             ),
-                        ],
-                        onChanged: (v) => setState(() => groupId = v!),
+                        labelOf: (g) => g.name,
+                        onSearch: (q) => searchableLocalFilter(
+                          items: groups,
+                          query: q,
+                          labelOf: (g) => g.name,
+                        ),
+                        onChanged: (g) =>
+                            setState(() => groupId = g?.id ?? groupId),
                       ),
                       const SizedBox(height: 12),
-                      DropdownButtonFormField<int>(
+                      SearchableSelectField<int>(
+                        label: l10n.day,
                         value: weekday,
-                        decoration: InputDecoration(labelText: l10n.day),
-                        items: [
-                          for (final e in weekdays.entries)
-                            DropdownMenuItem(
-                              value: e.key,
-                              child: Text(e.value),
-                            ),
-                        ],
-                        onChanged: (v) => setState(() => weekday = v!),
+                        labelOf: (d) => weekdays[d] ?? '$d',
+                        onSearch: (q) => searchableLocalFilter(
+                          items: weekdays.keys.toList(),
+                          query: q,
+                          labelOf: (d) => weekdays[d] ?? '$d',
+                        ),
+                        onChanged: (v) =>
+                            setState(() => weekday = v ?? weekday),
                       ),
                       const SizedBox(height: 12),
                       TextFormField(

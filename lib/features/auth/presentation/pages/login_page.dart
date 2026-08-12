@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   IconButton(
                     tooltip: l10n.language,
                     onPressed: () => context.read<LocaleCubit>().toggle(),
-                    icon: Icon(Icons.translate, color: scheme.onSurface),
+                    icon: Icon(Icons.language_outlined, color: scheme.onSurface),
                   ),
                   IconButton(
                     tooltip: l10n.theme,
